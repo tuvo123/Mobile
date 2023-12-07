@@ -120,8 +120,203 @@ nav ul li:nth-child(6) a{
 }
 nav ul li:nth-child(7):hover a,
 nav ul li:nth-child(8):hover a,
-nav ul li:nth-child(9):hover a{
+nav ul li:nth-child(10):hover a{
     color: white;
+}
+nav ul li:nth-child(9){
+    display: none;
+}
+nav ul li:nth-child(9){
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border-radius: 100%;
+}
+nav ul li:nth-child(9) a{
+    position: relative;
+    display: block;
+    width: 30px;
+    overflow: hidden;
+    height: 30px;
+    border-radius: 100%;
+}
+nav ul li:nth-child(9) img{
+    width: 300%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+.formuser{
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 100%;
+    z-index: 80;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+    right: 0;
+    background-color: #fff;
+    display: none;
+}
+.formuser-top{
+    height: 70px;
+    width: 100%;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    background-color: #ddd;
+}
+.formuser-top-img{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: -35px;
+    left: 115px;
+    border-radius: 100%;
+    border: 3px solid #e8e8e8;
+    background-color: #125ef5;
+    overflow: hidden;
+}
+.formuser-top-img-edit{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.formuse-dangxuat span:nth-child(3),
+.formuse-dangxuat span:nth-child(4){
+    display: none;
+}
+.formuser-top-img .formuser-top-img-edit img{
+    width: 300%;
+    position: absolute;
+    left: -23px;
+    top: -23px;
+}
+.formuser-top-file{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: -30px;
+    right: 115px;
+    border-radius: 100%;
+    border: 2px solid #ddd;
+    background: #125ef5;
+}
+.formuser-top-file label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+.formuser-top-file i{
+    width: 20px;
+    color: #f5cf12;
+    padding-top: 2px;
+
+}
+.formuser-bottom{
+    margin: 40px 10px 20px;
+}
+.formuser-bottom span{
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.formuser-bottom span .ttincanhan-left{
+    width: 30%;
+}
+.formuser-bottom span .ttincanhan-right{
+    width: 70%;
+}
+.formuser-edit{
+    margin: 40px 10px 20px;
+    display: none;
+}
+.formuser-edit span{
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 14px;
+    align-items: center;
+}
+.formuser-edit span .ttincanhan-left{
+    width: 30%;
+}
+.formuser-edit span .ttincanhan-right{
+    width: 70%;
+}
+.formuser-edit span .ttincanhan-right input{
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.formuser-edit-password{
+    margin: 40px 10px 20px;
+    display: none;
+}
+.formuser-edit-password span{
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 14px;
+    align-items: center;
+}
+.formuser-edit-password span .ttincanhan-left{
+    width: 30%;
+}
+.formuser-edit-password span .ttincanhan-right{
+    width: 70%;
+}
+.formuser-edit-password span .ttincanhan-right input{
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.formuse-dangxuat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.formuse-dangxuat span{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ddd;
+    margin: 0 5px 20px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    position: relative;
+    transition: all .3s ease;
+}
+.formuse-dangxuat span:hover{
+    border: 2px solid #125ef5;
+}
+.formuse-dangxuat span:hover i{
+    color: #125ef5;
+}
+.formuse-dangxuat span i{
+    font-size: 20px;
+}
+.formuse-dangxuat span .thongbao-user{
+    position: absolute;
+    width: 150px;
+    top: 120%;
+    transition: all .3s ease;
+    left: 0;
+}
+.formuse-dangxuat span:nth-child(1) .thongbao-user,
+.formuse-dangxuat span:nth-child(2) .thongbao-user,
+.formuse-dangxuat span:nth-child(3) .thongbao-user,
+.formuse-dangxuat span:nth-child(4) .thongbao-user,
+.formuse-dangxuat span:nth-child(5) .thongbao-user,
+.formuse-dangxuat span:nth-child(6) .thongbao-user{
+    display: none;
+}
+.formuse-dangxuat span:hover .thongbao-user{
+    display: block;
 }
 /* ******************menu-bar************* */
 .menu-bar{
@@ -1003,4 +1198,219 @@ nav ul li:nth-child(9):hover a{
     line-height: 20px;
 }.footer-bottom-item p span{
     color: #125ef5;
+}
+.form-dang-nhap{
+    position: fixed;
+    background:rgba(0, 0, 0, .6);
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+.form-dang-nhap-content{
+    width: 340px;
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.form-dang-nhap-content h2 {
+    text-align: center;
+    color:#2980b9;
+    margin-bottom: 20px;
+}
+
+.form-dang-nhap-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-dang-nhap-content .input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-dang-nhap-content .input-container i {
+    position: absolute;
+    left: 10px;
+    color: #de8b05;
+    top: 50%;
+    transform: translateY(-50%);
+    /* color:#333; */
+
+    padding-right: 20px;
+}
+.form-dang-nhap-content-dong{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 3px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.form-dang-nhap-content-dong:hover{
+    color: #f51212;
+    border: 1px solid #f51212;
+}
+.form-dang-nhap-content .input-container input {
+    padding-left: 35px;
+    padding-right: 10px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+.form-dang-nhap-content .input-container:nth-child(2) {
+    margin-bottom: 0;
+}
+.form-dang-nhap-content  a{
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #125ef5;
+    text-align: left;
+}
+
+.form-dang-nhap-content .login-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-dang-nhap-content .login-btn:hover {
+    background-color: #2980b9;
+}
+.form-dang-nhap-content .no-account {
+    display: flex;
+    margin: 20px;
+    font-size: 16px;
+}
+.form-dang-nhap-content .no-account a{
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 0;
+
+}
+.form-dang-ki-content{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    display: none;
+    position: relative;
+}
+
+.form-dang-ki-content h2 {
+    text-align: center;
+    color:#2980b9;
+    margin-bottom: 20px;
+}
+
+.form-dang-ki-content form {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+}
+.form-dang-ki-content a{
+    color: #3498db;
+    justify-items: center;
+    text-decoration: none;
+    align-items: center;
+}
+
+.form-dang-ki-content .input-container {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-dang-ki-content .input-container i {
+    position: absolute;
+    left: -110px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50%;
+    color: #F51212;
+    margin-right: 30px;
+}
+/* .bx-low-vision {
+    position: absolute;            
+    transform: translateX(-10%);
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+} */
+
+.form-dang-ki-content .input-container input {
+    padding-left: 35px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-dang-ki-content .select-container {
+    margin-bottom: 20px;
+}
+
+.form-dang-ki-content .registration-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.form-dang-ki-content .registration-btn:hover {
+    background-color: #2980b9;
+}
+
+.form-dang-ki-content .permission{
+    display: flex;
+}
+.form-dang-ki-content .permission select{
+    margin-left: 20px;
+    padding: 10px;
+}
+.form-dang-ki-content .permission label{
+    justify-content: center;
+}
+.form-dang-ki-content-dong{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 3px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.form-dang-ki-content-dong:hover{
+    color: #f51212;
+    border: 1px solid #f51212;
 }

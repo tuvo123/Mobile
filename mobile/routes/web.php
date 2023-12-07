@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\Users\LoginConTroller;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Admin\Users\UserController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\User\Users\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +20,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/trang-chu', 'App\Http\Controllers\Admin\Users\UserController@index');
+Route::get('/trang-chu', [UserController::class, 'index']);
+Route::get('/dang-nhap-admin', [LoginConTroller::class, 'index']);

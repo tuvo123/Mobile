@@ -484,6 +484,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.product-detail-show-bottom-right-button-mua a{
+    width: 48%;
+}
+.product-detail-show-bottom-right-button-mua a button{
+    width: 100%;
+}
 .product-detail-show-bottom-right-button-mua button{
     border: 1px solid #ddd;
     width: 48%;

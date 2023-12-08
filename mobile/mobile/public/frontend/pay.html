@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thế giới di động</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/pay.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -281,135 +281,82 @@
             </div>
         </div>
     </section> 
-    <section class="cart">
+    <section class="thanhtoan">
         <div class="container">
-            <div class="cart-quay-lai">
-                <li><a href="product.html"><i class='bx bx-chevron-left'></i>Mua thêm sản phẩm khác</a></li>
-                <li>Giỏ hàng của bạn</li>
-            </div>
-            <div class="cart-box">
-                <div class="cart-box-san-pham">
-                    <div class="cart-box-san-pham-left">
-                        <div class="cart-box-san-pham-left-img">
-                            <div class="cart-box-san-pham-left-img-anh">
-                                <img src="img_main/iphone-15-pro-blue-thumbnew-600x600.jpg" alt="">
-                            </div>
-                            <div class="cart-box-san-pham-left-img-btnxoa">
-                                <i class='bx bx-x-circle'></i> <span>Xóa</span>
-                            </div>
-                        </div>
-                        <div class="cart-box-san-pham-left-content">
-                            <li>Điện thoại iPhone 15 Pro</li>
-                            <li>5 khuyến mãi <i class='bx bxs-down-arrow'></i></li>
-                            <li>Màu: Titan xanh <i class='bx bxs-down-arrow'></i></li>
-                        </div>
-                    </div>
-                    <div class="cart-box-san-pham-right">
-                        <li>39.890.000<sup>đ</sup></li>
-                        <li>40.990.000 <sup>đ</sup></li>
-                        <li>
-                            <span class="giam-sl">-</span>
-                            <span class="sl-sp">1</span>
-                            <span class="tang-sl">+</span>
-                        </li>
-                    </div>
+            <div class="thanh-toan-box">
+                <div class="thanh-toan-top">
+                    <i class='bx bxs-check-circle'></i>
+                    <i class='bx bxs-shopping-bag'></i>
+                    <span>ĐẶT HÀNG THÀNH CÔNG</span>
                 </div>
-                <div class="cart-box-san-pham">
-                    <div class="cart-box-san-pham-left">
-                        <div class="cart-box-san-pham-left-img">
-                            <div class="cart-box-san-pham-left-img-anh">
-                                <img src="img_main/iphone-15-pro-blue-thumbnew-600x600.jpg" alt="">
+                <div class="thanh-toan-bottom">
+                    <div class="thanh-toan-bottom-loi-co">
+                        Cảm ơn Anh <span>Nguyễn Văn A</span> đã cho VATH cơ hội được phục vụ.
+                    </div>
+                    <div class="thanh-toan-bottom-don-hang">
+                        <div class="top">
+                            <div class="madonhang">
+                                <li>ĐƠN HÀNG:</li>
+                                <li>#76913609</li>
                             </div>
-                            <div class="cart-box-san-pham-left-img-btnxoa">
-                                <i class='bx bx-x-circle'></i> <span>Xóa</span>
+                            <div class="huydon">
+                                <li>Quản lý đơn hàng</li>
+                                <li><i class='bx bx-dots-horizontal-rounded'></i></li>
+                                <li>Hủy</li>
                             </div>
                         </div>
-                        <div class="cart-box-san-pham-left-content">
-                            <li>Điện thoại iPhone 15 Pro</li>
-                            <li>5 khuyến mãi <i class='bx bxs-down-arrow'></i></li>
-                            <li>Màu: Titan xanh <i class='bx bxs-down-arrow'></i></li>
+                        <div class="bottom">
+                            <li><b>Người nhận hàng: </b>Anh Nguyễn Văn A, 0345353535</li>
+                            <li><b>Giao đên: </b>203, Văn Cao, phường Phú Thọ Hòa, quận Tân Phú, Hồ Chí Minh (nhân viên sẽ gọi xác nhận trước khi giao).</li>
+                            <li><b>Tổng tiền: </b><span>28.290.000<sup>đ</sup></span></li>
                         </div>
                     </div>
-                    <div class="cart-box-san-pham-right">
-                        <li>39.890.000<sup>đ</sup></li>
-                        <li>40.990.000 <sup>đ</sup></li>
-                        <li>
-                            <span class="giam-sl">-</span>
-                            <span class="sl-sp">1</span>
-                            <span class="tang-sl">+</span>
-                        </li>
+                    <div class="thanh-toan-bottom-thong-bao">
+                        <li>Đơn hàng chưa được thanh toán</li>
                     </div>
+                    <div class="thanh-toan-bottom-hinh-thuc-thanh-toan">
+                        <li>Chọn hình thức thanh toán:</li>
+                        <li><input type="radio" id="tienmat" name="tienmat">
+                            <i class='bx bx-money'></i>
+                        <label for="tienmat">Thanh toán tiền mặt khi nhận hàng</label></li>
+                        <li><input type="radio" id="chuyenkhoan" name="tienmat">
+                            <i class='bx bx-money'></i>
+                        <label for="chuyenkhoan">Chuyển khoản ngân hàng</label></li>
+                        <li><input type="radio" id="atm" name="tienmat">
+                            <i class='bx bx-money'></i>
+                        <label for="atm">Qua thẻ ATM (có Internet Banking)</label></li>
+                        <li><input type="radio" id="qr" name="tienmat">
+                            <i class='bx bx-money'></i>
+                        <label for="qr">Qua VNPAY-QR</label></li>
+                        <li><input type="radio" id="momo" name="tienmat">
+                            <i class='bx bx-money'></i>
+                        <label for="momo">Ví MoMo</label></li>
+                    </div>
+                    <div class="thanh-toan-bottom-xac-nhan">
+                        <a href="#"><button>XÁC NHẬN</button></a>
+                    </div>
+                    <div class="thanh-toan-bottom-chinh-sach">
+                        <li>Xem chính sách hoàn tiền online</li>
+                    </div>
+                    <div class="thanh-toan-bottom-thoi-gian">
+                        <h5>THỜI GIAN NHẬN HÀNG</h5>
+                        <div class="thong-tin-sp">
+                            <b>Giao trước 17h00 Hôm nay(07/12)</b>
+                            <div class="san-pham">
+                                <li><img src="img_main/iphone-15-pro-blue-thumbnew-600x600.jpg" alt=""></li>
+                                <li><div class="tensp">Điện thoại iPhone 15 Pro 128GB</div>
+                                    <div class="mau">
+                                        <span>Màu: Titan xanh</span>
+                                        <span>Số lượng: 1</span>
+                                    </div></li>
+                            </div>
+                        </div>
+                        
+                        <a class="mau-them-sp" href="product.html"><div >Mua thêm sản phẩm khác </div></a>
+                       
+                    </div>
+
                 </div>
-                <div class="cart-box-tinh-tong">
-                    <li>Tạm tính (<span>1</span> sản phẩm):</li>
-                    <li>39.890.000<sup>đ</sup></li>
-                </div>
-                <div class="cart-box-thong-tin-kh">
-                    <div class="cart-box-thong-tin-khach-hang">
-                        <h5>Thông tin khách hàng</h5>
-                        <div class="cart-box-radio-btn">
-                            <li><input type="radio" id="nam" name="gioitinh">
-                            <label for="nam">Anh</label></li>
-                            <li><input type="radio" id="nu" name="gioitinh">
-                                <label for="nu">Nữ</label></li>
-                        </div>
-                        <div class="cart-box-edit-text">
-                            <input type="text" placeholder="Họ và tên">
-                            <input type="text" placeholder="Số điện thoại">
-                        </div>
-                    </div>
-                    <div class="cart-box-thong-tin-dia-chi">
-                        <h5>Chọn cách thức nhận hàng</h5>
-                        <div class="cart-box-radio-btn">
-                            <li><input type="radio" id="giaotannoi" name="noinhan">
-                            <label for="giaotannoi">Giao tận nơi</label></li>
-                            <li><input type="radio" id="nhantaisieuthi" name="noinhan">
-                                <label for="nhantaisieuthi">Nhận tại siêu thị</label></li>
-                        </div>
-                        <div class="cart-box-edit-text">
-                            <input type="text" placeholder="Nhập tỉnh/thành phố">
-                            <input type="text" placeholder="Nhập quận/huyện">
-                            <input type="text" placeholder="Nhập phường/xã">
-                            <input type="text" placeholder="Nhập số nhà, tên đường">
-                        </div>
-                    </div>
-                    <div class="cart-box-edit-khac">
-                        <input type="text" placeholder="Yêu cầu khác (Nếu có)">
-                    </div>
-                    <div class="cart-box-thong-tin-khac">
-                        <li><input type="checkbox" id="chknguoinhankhac" name="nhanhang">
-                        <label for="chknguoinhankhac">Gọi người khác nhận hàng (nếu có)</label></li>
-                        <li><input type="checkbox" id="chkchuyendulieu" name="chuyendulieu">
-                            <label for="chkchuyendulieu">Chuyển danh bạ, dữ liệu qua máy mới</label></li>
-                        <li><input type="checkbox" id="chkxuathoadon" name="xuathoadon">
-                            <label for="chkxuathoadon">Xuất hóa đơn công ty</label></li>
-                    </div>
-                </div>
-                <div class="cart-box-thanh-toan">
-                    <div class="cart-box-giam-gia">
-                        <li>Mã giảm gia/Phiếu mua hàng</li>
-                        <li><input type="text" placeholder="Nhập Mã giảm/Phiếu mua hàng"><input type="button" value="Áp dụng"></li>
-                    </div>
-                    <div class="cart-box-tinh-tong-tien">
-                        <li>Tổng tiền:</li>
-                        <li>28.290.000<sup>đ</sup></li>
-                    </div>
-                    <div class="cart-box-diem-tich-luy">
-                        <li>Điểm tích lũy:</li>
-                        <li><span>28.290</span>điểm</li>
-                    </div>
-                    <div class="cart-box-chk-xac-nhan">
-                        <input type="checkbox" id="chkxacnhan" name="chkxacnhan">
-                        <label for="chkxacnhan">Tôi đồng ý với <span>Chính sách xử lý dữ liệu cá nhân</span> của Thế Giới Di Động</label>
-                    </div>
-                    <div class="cart-box-button-dat-hang">
-                        <a href="pay.html"><input type="button" value="ĐẶT HÀNG"></a>
-                    </div>
-                    <div class="cart-box-thong-bao">
-                        <li>Bạn có thể chọn hình thức thanh toán sau khi đặt hàng</li>
-                    </div>
-                </div>
-                
             </div>
         </div>
     </section>
@@ -486,6 +433,7 @@
             </div>
             
         </div>
+
         <div class="footer-bottom">
             <div class="footer-bottom-item">
                 <p>&copy; 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02//1/2007. GPMXH: 238/GP-BTTTT do Bộ Thông tin và Truyền Thông cấp ngày 04/06/2020.</p>
@@ -495,6 +443,5 @@
         </div>
     </section>
     <script src="js/script.js"></script>
-    <script src="js/cart.js"></script>
 </body>
 </html>

@@ -1,287 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thế giới di động</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/product.css">
-    <link rel="stylesheet" href="css/product_detail.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-    <header>
-        <img src="image/hinh1.png" alt="" srcset="">
-    </header>
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html"><img style="width: 150px;" src="image/logo1.png" alt="" srcset=""></a></li>
-                <li id="adress-form"><a href="#">Đà Nẵng<i class='bx bxs-down-arrow'></i></a> 
-                </li>
-                <li><input type="text" placeholder="Bạn tìm gì..."><i class='bx bx-search-alt-2' ></i></li>
-                <li><a href="cart.html"><button><i class='bx bx-cart'></i>Giỏ hàng</button></a></li>
-                <li><a href="">Lịch sử<br>đơn hàng</a></li>
-                <li><a href=""><span class="btn-content"><span class="btn-top"></span></span>Mua thẻ nạp ngay!</a></li>
-                <li><a href="">24h Công nghệ</a></li>
-                <li><a href="">Hỏi đáp</a></li>
-                <li class="trang-thai-dang-nhap" ><a class="chinh-sua-user" href="#"><img src="image/download.jpg" alt=""></a>
-                    <div class="formuser">
-                        <div class="formuser-top">
-                            <div class="formuser-top-img">
-                                <div class="formuser-top-img-edit">
-                                     <img src="image/download.jpg" alt="">
-                                </div>
-                               
-                                
-                            </div>
-                            <div class="formuser-top-file">
-                                
-                                <input type="file" name="addanh" id="addanh" style="display: none;">
-                                <label for="addanh">
-                                    <i class='bx bxs-pencil'></i>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="formuser-bottom">
-                            <span><div class="ttincanhan-left">
-                                Họ và tên:
-                            </div>
-                            <div class="ttincanhan-right">
-                                Nguyễn Văn B
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Tên TK:
-                            </div>
-                            <div class="ttincanhan-right">
-                                nguyenvanb
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Số ĐT:
-                            </div>
-                            <div class="ttincanhan-right">
-                                0123456789
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Email:
-                            </div>
-                            <div class="ttincanhan-right">
-                                nguyenvanb@gmail.com
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Địa chỉ:
-                            </div>
-                            <div class="ttincanhan-right">
-                                Vườn Lài, Tân Phú, TP.Hồ Chí Minh
-                            </div> </span>
-    
-                        </div>
-                        <div class="formuser-edit">
-                            <span><div class="ttincanhan-left">
-                                Họ và tên:
-                            </div>
-                            <div class="ttincanhan-right">
-                                <input type="text" placeholder="Nhập tên">
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Tên TK:
-                            </div>
-                            <div class="ttincanhan-right">
-                                <input type="text" placeholder="Nhập tên tài khoản">
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Số ĐT:
-                            </div>
-                            <div class="ttincanhan-right">
-                                <input type="text" placeholder="Nhập số ĐT">
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Email:
-                            </div>
-                            <div class="ttincanhan-right">
-                                <input type="text" placeholder="Nhập Email">
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Địa chỉ:
-                            </div>
-                            <div class="ttincanhan-right">
-                                <input type="text" placeholder="Nhập địa chỉ">
-                            </div> </span>
-    
-                        </div>
-                        <div class="formuser-edit-password">
-                            <span><div class="ttincanhan-left">
-                                Nhập mật khẩu cũ:
-                            </div>
-                            <div class="ttincanhan-right">
-                                <input type="password" placeholder="Nhập MK cũ">
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Nhập mật khẩu mới:
-                            </div>
-                            <div class="ttincanhan-right">
-                                <input type="password" placeholder="Nhập MK mới">
-                            </div> </span>
-                            <span><div class="ttincanhan-left">
-                                Nhập lại mật khẩu:
-                            </div>
-                            <div class="ttincanhan-right">
-                                <input type="password" placeholder="Nhập lại MK">
-                            </div> </span>                        
-                        </div>
-                        <div class="formuse-dangxuat">
-                            <span class="chinh-sua-tk"><i class='bx bx-edit-alt'></i><div class="thongbao-user">Chỉnh sửa thông tin</div></span>
-                            <span class="chinh-sua-mk"><i class='bx bx-key'></i><div class="thongbao-user">Đổi mật khẩu</div></span>
-                            <span class="chinh-sua-ql"><i class='bx bx-arrow-back'></i><div class="thongbao-user">Quay lại</div></span>
-                            <span class="chinh-sua-luu"><i class='bx bxs-save'></i><div class="thongbao-user">Lưu thay đổi</div></span>
-                            <span class="chuyen-admin"><i class='bx bxs-user-circle'></i><div class="thongbao-user">Chuyển sang chế độ admin</div></span>
-                            <span class="dang-xuat"><i class='bx bx-log-out'></i><div class="thongbao-user">Chỉnh sửa thông tin</div></span>
-    
-                        </div>
-                    </div>
-                    </li>
-                    <li id="btn-dangnhap"><a href="#">Đăng nhập / Đăng ký</a></li>
-                    <div class="form-dang-nhap">
-                        <div class="form-dang-nhap-content">
-                            <div class="form-dang-nhap-content-dong">Đóng</div>
-                            <h2>Đăng nhập</h2>
-                            <form action="#" method="post">
-                                <div class="input-container">
-                                <i class='bx bxs-envelope'></i>
-                                    <input type="email" placeholder="Email" name="email" required>
-                                </div>
-    
-                                <div class="input-container">
-                                <i class='bx bxs-lock'></i>
-                                    <input type="password" placeholder="Password" name="password" required>
-                                </div>
-                                <a href="#">Quên mật khẩu</a>
-    
-                                <button type="submit" class="login-btn">Login</button>
-    
-                                <div class="no-account">
-                                    <label>Bạn chưa có tài khoản? </label>
-                                    <a href="#" id="btn-dang-ki">Đăng ký</a><br>
-                                </div>
-                                
-                            </form>
-                        </div>
-                        <div class="form-dang-ki-content">
-                            <div class="form-dang-ki-content-dong">Đóng</div>
-                            <h2>Đăng kí</h2>
-                            <form action="#" method="post">
-                                <div class="input-container">
-                                <i class='bx bxs-user-circle'></i>
-                                    <input type="text" placeholder="Họ và tên" name="hoten" required>
-                                </div>
-                                <div class="input-container">
-                                    <i class='bx bxs-user-circle'></i>
-                                        <input type="text" placeholder="Tên tài khoản" name="tentaikhoan" required>
-                                    </div>
-                                <div class="input-container">
-                                <i class='bx bxs-envelope'></i>
-                                    <input type="email" placeholder="Email" name="email" required>
-                                </div>
-    
-                                <div class="input-container">
-                                <i class='bx bxs-lock'></i>
-                                    <input type="password" placeholder="Mật khẩu" name="password" required>
-                                <!-- <i class='bx bx-low-vision'></i> -->
-                                </div>
-    
-                                <div class="input-container">
-                                <i class='bx bxs-phone'></i>
-                                    <input type="tel" placeholder="Số điện thoại" name="phone" required>
-                                </div>
-    
-                                
-    
-                                <div class="input-container">
-                                <i class='bx bxs-home'></i>
-                                    <input type="text" placeholder="Địa chỉ" name="address" required>
-                                </div>
-                                
-    
-                                <button type="submit" class="registration-btn">Register</button>
-                                
-                            </form>
-                        </div>
-                    </div>
-                <div class="adress-form">
-                    <div class="adress-form-content">
-                        <h2>Chọn địa chỉ nhận hàng <span id="adress-close">X Đóng</span></h2>
-                        <form action="">
-                            <p>Chọn đầy đủ địa chỉ nhận hàng để biết chính xác thời gian</p>
-                            <select name="a">
-                                <option value="#">--Chọn địa điểm</option>
-                                <option value="#">Đà Nẵng</option>
-                            </select>
-                            <select name="ac">
-                                <option value="#">--Chọn Quận/Huyện</option>
-                                <option value="#">Đà Nẵng</option>
-                            </select>
-                            <select name="ab">
-                                <option value="#">--Chọn Phường/Xã</option>
-                                <option value="#">Đà Nẵng</option>
-                            </select>
-                            <input type="text" placeholder="Số nhà, Tên đường">
-                            <button>Xác nhận</button>
-                        </form>
-                    </div>
-                </div>
-            </ul>
-        </div>
-        
-    </nav>
-    <section class="menu-bar">
-        <div class="container">
-            <div class="menu-bar-content">
-                <ul>
-                    <li><a href="product.html"><i class='bx bx-mobile'></i>Điện thoại</a></li>
-                    <li><a href=""><i class='bx bx-laptop'></i>Laptop</a></li>
-                    <li><a href=""><i class='bx bx-mobile'></i>Tablet</a></li>
-                    <li><a href=""><i class='bx bx-headphone'></i>Phụ kiện<i style="margin-left: 6px;" class='bx bxs-down-arrow'></i></a>
-                        <div class="submenu">
-                            <ul>
-                                <li><a href="#">Phụ kiện A</a></li>
-                                <li><a href="#">Phụ kiện B</a></li>
-                                <li><a href="#">Phụ kiện C</a></li>
-                                <li><a href="#">Phụ kiện D</a></li>
-                                <li><a href="#">Phụ kiện E</a></li>
-                                <li><a href="#">Phụ kiện F</a></li>
-                                <li><a href="#">Phụ kiện G</a></li>
-                                <li><a href="#">Phụ kiện H</a></li>
-                                <li><a href="#">Phụ kiện I</a></li>
-                                <li><a href="#">Phụ kiện J</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href=""><i class='bx bxs-watch-alt'></i>Smart Watch</a></li>
-                    <li><a href=""><i class='bx bxs-watch'></i>Đồng hồ</a></li>
-                    <li><a href=""><i class='bx bxl-windows'></i>PC, Máy in<i style="margin-left: 6px;" class='bx bxs-down-arrow'></i></a>
-                        <div class="submenu">
-                            <ul>
-                                <li><a href="#">Phụ kiện A</a></li>
-                                <li><a href="#">Phụ kiện B</a></li>
-                                <li><a href="#">Phụ kiện C</a></li>
-                                <li><a href="#">Phụ kiện D</a></li>
-                                <li><a href="#">Phụ kiện E</a></li>
-                                <li><a href="#">Phụ kiện F</a></li>
-                                <li><a href="#">Phụ kiện G</a></li>
-                                <li><a href="#">Phụ kiện H</a></li>
-                                <li><a href="#">Phụ kiện I</a></li>
-                                <li><a href="#">Phụ kiện J</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="">Máy cũ giá rẻ</a></li>
-                    <li><a href="">Sim, Thẻ cào</a></li>
-                    <li><a href="">Trả góp, điện nước</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
+@include('user.hearder')
     <section class="product-detail">
         <div class="container">
             <div class="product-detail-show">
@@ -315,10 +32,10 @@
                         <div class="product-detail-show-bottom-left-top">
                             <div class="product-detail-show-bottom-left-top-img dacbiet">
                                 <div class="product-detail-show-bottom-left-top-img-slider">
-                                    <a href=""><img src="image/sliderip151.jpg" alt=""></a>
-                                    <a href=""><img src="image/sliderip152.jpg" alt=""></a>
-                                    <a href=""><img src="image/sliderip153.jpg" alt=""></a>
-                                    <a href=""><img src="image/sliderip154.jpg" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/image/sliderip151.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/image/sliderip152.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/image/sliderip153.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/image/sliderip154.jpg')}}" alt=""></a>
                                 </div>
                                 
                                 <div class="product-detail-show-bottom-left-top-img-btn">
@@ -330,10 +47,10 @@
                             <div class="product-detail-show-bottom-left-top-img mau1">
                             
                                 <div class="product-detail-show-bottom-left-top-img-slider">
-                                    <a href=""><img src="img/iphone-15-pro-black-1.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-black-2.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-black-3.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-black-4.jpg" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-black-1.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-black-2.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-black-3.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-black-4.jpg')}}" alt=""></a>
                                 </div>
                                 
                                 
@@ -346,10 +63,10 @@
                             <div class="product-detail-show-bottom-left-top-img mau2">
                                 
                                 <div class="product-detail-show-bottom-left-top-img-slider">
-                                    <a href=""><img src="img/iphone-15-pro-blue-1.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-blue-2.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-blue-3.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-blue-4.jpg" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-blue-1.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-blue-2.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-blue-3.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-blue-4.jpg')}}" alt=""></a>
                                 </div>
                                 
                                 <div class="product-detail-show-bottom-left-top-img-btn">
@@ -361,10 +78,10 @@
                             <div class="product-detail-show-bottom-left-top-img mau3">
                                 
                                 <div class="product-detail-show-bottom-left-top-img-slider">
-                                    <a href=""><img src="img/iphone-15-pro-white-1.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-white-2.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-white-3.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-white-4.jpg" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-white-1.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-white-2.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-white-3.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-white-4.jpg')}}" alt=""></a>
                                 </div>
                                 
                                 
@@ -378,10 +95,10 @@
                             
                                 
                                 <div class="product-detail-show-bottom-left-top-img-slider">
-                                    <a href=""><img src="img/iphone-15-pro-titan-tu-nhien-1.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-titan-tu-nhien-2.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-titan-tu-nhien-3.jpg" alt=""></a>
-                                    <a href=""><img src="img/iphone-15-pro-titan-tu-nhien-4.jpg" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-titan-tu-nhien-1.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-titan-tu-nhien-2.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-titan-tu-nhien-3.jpg')}}" alt=""></a>
+                                    <a href=""><img src="{{asset('frontend/img/iphone-15-pro-titan-tu-nhien-4.jpg')}}" alt=""></a>
                                 </div>
                                 
                                 <div class="product-detail-show-bottom-left-top-img-btn">
@@ -395,19 +112,19 @@
                                 <li id="vitrihinh">(1/4)</li>
                             </div>
                             <div class="product-detail-show-bottom-left-top-menu">
-                                <li class="active btn-noi-bat"><div><img src="image/icondacbiet.png" alt=""></div><p>Điểm nổi bật</p></li>
-                                <li class="btn-mau1"><div><img src="img/iphone-15-pro-black.jpg" alt=""></div><p>Titan đen</p></li>
-                                <li class="btn-mau2"><div><img src="img/iphone-15-pro-blue.jpg" alt=""></div><p>Titan xanh</p></li>
-                                <li class="btn-mau3"><div><img src="img/iphone-15-pro-white.jpg" alt=""></div><p>Titan trắng</p></li>
-                                <li class="btn-mau4"><div><img src="img/iphone-15-pro-gold.jpg" alt=""></div><p>Titan tự nhiên</p></li>
-                                <li class="openkt"><div><img src="image/icontskt.png" alt=""></div><p>Thông số kĩ thuật</p></li>
-                                <li class="opentt"><div><img src="image/iconttsp.png" alt=""></div><p>Thông tin sản phẩm</p></li>
+                                <li class="active btn-noi-bat"><div><img src="{{asset('frontend/image/icondacbiet.png')}}" alt=""></div><p>Điểm nổi bật</p></li>
+                                <li class="btn-mau1"><div><img src="{{asset('frontend/img/iphone-15-pro-black.jpg')}}" alt=""></div><p>Titan đen</p></li>
+                                <li class="btn-mau2"><div><img src="{{asset('frontend/img/iphone-15-pro-blue.jpg')}}" alt=""></div><p>Titan xanh</p></li>
+                                <li class="btn-mau3"><div><img src="{{asset('frontend/img/iphone-15-pro-white.jpg')}}" alt=""></div><p>Titan trắng</p></li>
+                                <li class="btn-mau4"><div><img src="{{asset('frontend/img/iphone-15-pro-gold.jpg')}}" alt=""></div><p>Titan tự nhiên</p></li>
+                                <li class="openkt"><div><img src="{{asset('frontend/image/icontskt.png')}}" alt=""></div><p>Thông số kĩ thuật</p></li>
+                                <li class="opentt"><div><img src="{{asset('frontend/image/iconttsp.png')}}" alt=""></div><p>Thông tin sản phẩm</p></li>
                             </div>
                             <div class="product-detail-show-bottom-left-top-chinh-sach-sp">
 
-                                <li><div><img src="image/iconphukien.png" alt=""></div><p>Hư gì đổi nấy <b>12 tháng</b> tại 3206 siêu thị toàn quốc (miễn phí tháng đầu) <span>Xem chi tiết</span></p></li>
-                                <li><div><img src="image/iconbaohanh.png" alt=""></div><p>Bảo hành <b>chính hãng điện thoại 1 năm</b> tại các trung tâm bảo hành hãng <span>Xem địa chỉ bảo hành</span></p></li>
-                                <li><div><img src="image/icondonghop.png" alt=""></div><p>Bộ sản phẩm gồm: Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Type C</p></li>
+                                <li><div><img src="{{asset('frontend/image/iconphukien.png')}}" alt=""></div><p>Hư gì đổi nấy <b>12 tháng</b> tại 3206 siêu thị toàn quốc (miễn phí tháng đầu) <span>Xem chi tiết</span></p></li>
+                                <li><div><img src="{{asset('frontend/image/iconbaohanh.png')}}" alt=""></div><p>Bảo hành <b>chính hãng điện thoại 1 năm</b> tại các trung tâm bảo hành hãng <span>Xem địa chỉ bảo hành</span></p></li>
+                                <li><div><img src="{{asset('frontend/image/icondonghop.png')}}" alt=""></div><p>Bộ sản phẩm gồm: Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Type C</p></li>
                             </div>
                             
                     
@@ -687,7 +404,7 @@
                                     </div>
                                 </div>
                                 <div class="product-detail-show-tskt-chtsp-bottom-ttsp">
-                                    <img src="image/sliderip152.jpg" alt="">
+                                    <img src="{{asset('frontend/image/sliderip152.jpg')}}" alt="">
                                     <p>Vào tháng 09/2023, cuối cùng Apple cũng đã chính thức giới thiệu iPhone 15 Pro Max 512 GB tại sự kiện ra mắt thường niên với nhiều điểm đáng chú ý, nổi bật trong số đó có thể kể đến như sự góp mặt của chipset Apple A17 Pro có trên máy, thiết kế khung titan hay cổng Type-C lần đầu có mặt trên điện thoại iPhone.</p>
                                 </div>
                             </div>
@@ -712,11 +429,11 @@
                                 <span>Hồ Chí Minh <i class='bx bx-chevron-down'></i></span>
                             </li>
                             <li><b>28.290.000 <sup>đ</sup></b>* <p>28.990.000 <sup>đ</sup></p>-2% <span>Trả góp 0%</span></li>
-                            <li><img src="image/imgtgdi.png" alt=""><b>+28.290</b>điểm tích lũy Quỳ Tặng VIP <i class='bx bx-bolt-circle'></i></li>
+                            <li><img src="{{asset('frontend/image/imgtgdi.png')}}" alt=""><b>+28.290</b>điểm tích lũy Quỳ Tặng VIP <i class='bx bx-bolt-circle'></i></li>
                         </div>
                         <div class="product-detail-show-bottom-right-button-mua">
-                            <a href="pay.html"><button>MUA NGAY</button></a>
-                            <a href="cart.html"><button>THÊM VÀO GIỎ HÀNG</button></a>
+                            <a href="/user/pay"><button>MUA NGAY</button></a>
+                            <a href="/user/cart"><button>THÊM VÀO GIỎ HÀNG</button></a>
                         </div>
                         <div class="product-detail-show-bottom-right-khuyen-mai">
                             <div class="product-detail-show-bottom-right-khuyen-mai-top">
@@ -740,7 +457,7 @@
                     <div class="product-detail-show-sp-khac-top">
                         <div class="product-detail-show-sp-khac-top-xemthem">
                             <h6>Xem thêm điện thoại</h6>
-                            <a href="product.html">Xem tất cả <i class='bx bxs-right-arrow'></i></a>
+                            <a href="/user/product">Xem tất cả <i class='bx bxs-right-arrow'></i></a>
                         </div>
                         
                         <div class="product-detail-show-sp-khac-top-phan-loai">
@@ -761,10 +478,10 @@
                                 <a href="">Trả góp 0%</a>
                             </div>
                             <div class="product-content-item-img">
-                                <img src="img_main/iphone-15-pro-blue-thumbnew-600x600.jpg" alt="">
+                                <img src="{{asset('frontend/img_main/iphone-15-pro-blue-thumbnew-600x600.jpg')}}" alt="">
                             </div>
                             <div class="product-content-item-title">
-                                <li><img src="image/icon-50x50-2.png" alt="">GIÁ RẺ QUÁ</li>
+                                <li><img src="{{asset('frontend/image/icon-50x50-2.png')}}" alt="">GIÁ RẺ QUÁ</li>
                                 <li><a href="product_detail.html">iPhone 15 Pro</a></li>
                                 <li>
                                     <a href="">6.7"</a>
@@ -791,10 +508,10 @@
                                 <a href="">Trả góp 0%</a>
                             </div>
                             <div class="product-content-item-img">
-                                <img src="img_main/oppo-find-x5-pro-trang-thumb-1-600x600.jpg" alt="">
+                                <img src="{{asset('frontend/img_main/oppo-find-x5-pro-trang-thumb-1-600x600.jpg')}}" alt="">
                             </div>
                             <div class="product-content-item-title">
-                                <li><img src="image/icon-50x50-2.png" alt="">GIÁ RẺ QUÁ</li>
+                                <li><img src="{{asset('frontend/image/icon-50x50-2.png')}}" alt="">GIÁ RẺ QUÁ</li>
                                 <li>iPhone 15 Pro</li>
                                 <li>
                                     <a href="">6.7"</a>
@@ -821,10 +538,10 @@
                                 <a href="">Trả góp 0%</a>
                             </div>
                             <div class="product-content-item-img">
-                                <img src="img_main/realme-11-pro-5g-green-thumb-1-600x600.jpg" alt="">
+                                <img src="{{asset('frontend/img_main/realme-11-pro-5g-green-thumb-1-600x600.jpg')}}" alt="">
                             </div>
                             <div class="product-content-item-title">
-                                <li><img src="image/icon-50x50-2.png" alt="">GIÁ RẺ QUÁ</li>
+                                <li><img src="{{asset('frontend/image/icon-50x50-2.png')}}" alt="">GIÁ RẺ QUÁ</li>
                                 <li>iPhone 15 Pro</li>
                                 <li>
                                     <a href="">6.7"</a>
@@ -851,10 +568,10 @@
                                 <a href="">Trả góp 0%</a>
                             </div>
                             <div class="product-content-item-img">
-                                <img src="img_main/xiaomi-redmi-note-12-vang-1-thumb-momo-600x600.jpg" alt="">
+                                <img src="{{asset('frontend/img_main/xiaomi-redmi-note-12-vang-1-thumb-momo-600x600.jpg')}}" alt="">
                             </div>
                             <div class="product-content-item-title">
-                                <li><img src="image/icon-50x50-2.png" alt="">GIÁ RẺ QUÁ</li>
+                                <li><img src="{{asset('frontend/image/icon-50x50-2.png')}}" alt="">GIÁ RẺ QUÁ</li>
                                 <li>iPhone 15 Pro</li>
                                 <li>
                                     <a href="">6.7"</a>
@@ -881,10 +598,10 @@
                                 <a href="">Trả góp 0%</a>
                             </div>
                             <div class="product-content-item-img">
-                                <img src="img_main/samsung-galaxy-a24-black-thumb-600x600.jpg" alt="">
+                                <img src="{{asset('frontend/img_main/samsung-galaxy-a24-black-thumb-600x600.jpg')}}" alt="">
                             </div>
                             <div class="product-content-item-title">
-                                <li><img src="image/icon-50x50-2.png" alt="">GIÁ RẺ QUÁ</li>
+                                <li><img src="{{asset('frontend/image/icon-50x50-2.png')}}" alt="">GIÁ RẺ QUÁ</li>
                                 <li>iPhone 15 Pro</li>
                                 <li>
                                     <a href="">6.7"</a>
@@ -911,88 +628,4 @@
             </div>
         </div>
     </section> 
-    <section class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-top-left">
-                    <div class="footer-top-left-items">
-                        <div class="footer-top-left-items-top">
-                            <li>Tích điểm Quà tặng VIP</li>
-                            <li>Lịch sử mua hàng</li>
-                            <li>Tìm hiểu về mua trả góp</li>
-                            <li>Chính sách bảo hành</li>
-                            <li>Chính sách đổi trả</li>
-                        </div>
-                        <div class="footer-top-left-items-btn">
-                            <li>Xem thêm<i class='bx bxs-down-arrow'></i></li>
-                        </div>
-                        <div class="footer-top-left-items-bottom">
-                            <li>Chính sách đổi trả</li>
-                            <li>Giao hàng & Thanh toán</li>
-                            <li>Hướng dẫn mua online</li>
-                            <li>Bán hàng doanh nghiệp</li>
-                            <li>Phiếu mua hàng</li>
-                            <li>In hóa đơn điện tử</li>
-                            <li>Quy chế hoạt động</li>
-                            <li>Chính sách xử lý dữ liệu cá nhân</li>
-                            <li>Nội quy của hàng</li>
-                            <li>Chất lượng phục vụ</li>
-                            <li>Cảnh báo giả mạo</li>
-                            <li>Chính sách khui hộp sản phẩm Apple</li>
-                            
-                        </div>
-                    </div>
-                    <div class="footer-top-left-items">
-                        <li>Giới thiệu công ty (MWG.vn)</li>
-                        <li>Tuyển dụng</li>
-                        <li>Gửi góp ý, khiếu nại</li>
-                        <li>Tìm siêu thị (3.209 shop)</li>
-                        <li>Xem bản mobile</li>
-                    </div>
-                    <div class="footer-top-left-items">
-                        <li><b>Tổng đài hỗ trợ</b> (Miễn phí gọi)</li>
-                        <li>Khiếu nại: <span>1800.1062</span> (8:00-21:30)</li>
-                        <li>Bảo hành: <span>1800.1064</span> (8:00-21:00)</li>
-                    </div>
-                </div>
-                <div class="footer-top-right">
-                    <div class="footer-top-right-luot-like">
-                        <a href="#"><i class='bx bxl-facebook-circle'></i>3886.8k Fan</a>
-                        <a href="#"><i class='bx bxl-youtube'></i>864k Đăng kí</a>
-                        <a href="#"><i class='bx bxl-tiktok'></i>324k Follow</a>
-                    </div>
-                    <div class="footer-top-right-cong-nhan">
-                        <a href=""><img src="image/abctuong.png" alt=""></a>
-                        <a href=""><img src="image/alogo2.png" alt=""></a>
-                        <a href=""><img src="image/alogo3.png" alt=""></a>
-                        <a href=""><img src="image/alogo4.png" alt=""></a>
-                    </div>
-                    <div class="footer-top-right-content">
-                        <li>Website cùng tập đoàn</li>
-                    </div>
-                    <div class="footer-top-right-tap-doan">
-                        <a href=""><img src="image/anhttgi.png" alt=""></a>
-                        <a href=""><img src="image/anhdmx.png" alt=""></a>
-                        <a href=""><img src="image/anhbhx.png" alt=""></a>
-                        <a href=""><img src="image/anhntak.png" alt=""></a>
-                        <a href=""><img src="image/anhavakid.png" alt=""></a>
-                        <a href=""><img src="image/anhtantam.png" alt=""></a>
-                        <a href=""><img src="image/anh4k.png" alt=""></a>
-                        <a href=""><img src="image/anhvieclam.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-bottom-item">
-                <p>&copy; 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02//1/2007. GPMXH: 238/GP-BTTTT do Bộ Thông tin và Truyền Thông cấp ngày 04/06/2020.</p>
-                <p>Địa chỉ: 128 Trần Quang Khải, P.Tân Định, Q.1, TP.Hồ Chí Minh. Địa chỉ liên hệ và gửi chứng từ: Lô T2-1.2, Đường D1, Đ. D1, P.Tân Phú, TP.Thủ Đức, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email: cskh@thegioididong.com. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt. Email: Tot.huynhvan@thegioididong.com.
-                <span>Xem chính sách sử dụng</span></p>
-            </div>
-        </div>
-    </section>
-    <script src="js/pd_detail.js"></script>
-    <script src="js/script.js"></script>
-</body>
-</html>
+@include('user.footer')

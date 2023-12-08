@@ -82,5 +82,8 @@
     <script src="{{asset('frontend/js/index.js')}}"></script>
     <script src="{{asset('frontend/js/script.js')}}"></script>
     <script src="{{asset('frontend/js/slider.js')}}"></script>
+    <script src="{{asset('frontend/js/cart.js')}}"></script>
+    <script src="{{asset('frontend/js/pd_detail.js')}}"></script>
+    <script src="{{asset('frontend/js/product.js')}}"></script>
 </body>
 </html>

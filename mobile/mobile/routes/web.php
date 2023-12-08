@@ -22,3 +22,15 @@ Route::get('/', function () {
 
 Route::get('/trang-chu', [UserController::class, 'index']);
 Route::get('/dang-nhap-admin', [LoginConTroller::class, 'index']);
+Route::get('/chi-tiet-san-pham',[UserController::class,'product_detail']);
+Route::get('/san-pham', [UserController::class, 'product']);
+Route::get('/thanh-toan', [UserConTroller::class, 'pay']);
+Route::get('/lich-su-hoa-don',[UserController::class,'order']);
+Route::get('/user/order',[UserController::class,'order']);
+Route::get('/gio-hang',[UserController::class,'cart']);
+Route::get('/user/main', [UserController::class, 'index']);
+Route::get('/user/product_detail',[UserController::class,'product_detail']);
+Route::get('/user/product', [UserController::class, 'product']);
+Route::get('/user/pay', [UserConTroller::class, 'pay']);
+Route::get('/user/order',[UserController::class,'order']);
+Route::get('/user/cart',[UserController::class,'cart']);

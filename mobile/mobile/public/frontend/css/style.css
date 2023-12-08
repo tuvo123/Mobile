@@ -24,8 +24,8 @@ header{
 }
 /* *********************nav*************** */
 nav{
-    background-color: #FFF200;
-    padding: 5px 0;
+    background-color: #00BFFF;
+    /* padding: 5px 0; */
 }
 nav ul{
     display: flex;
@@ -320,7 +320,7 @@ nav ul li:nth-child(9) img{
 }
 /* ******************menu-bar************* */
 .menu-bar{
-    background-color: #FED100;
+    background-color: #3498db;
 }
 .menu-bar ul{
     display: flex;
@@ -328,7 +328,7 @@ nav ul li:nth-child(9) img{
 }
 .menu-bar ul li a{
     font-size: 16px;
-    color: black;
+    color: #F5F5F5;
 }
 .menu-bar ul li a i{
     margin-right: 6px;
@@ -339,7 +339,7 @@ nav ul li:nth-child(9) img{
     transition: all .3s ease;
 }
 .menu-bar ul li:hover{
-    background-color: white;
+    background-color: #de8b05;
 }
 .menu-bar-content > ul > li:nth-child(9){
     position: relative;
@@ -443,7 +443,7 @@ nav ul li:nth-child(9) img{
 }
 .submenu{
     position: absolute;
-    background-color: #ddd;
+    background-color: #de8b05;
     width: 300px;
     height: auto;
     left: 0;
@@ -459,10 +459,43 @@ nav ul li:nth-child(9) img{
 .submenu ul li{
     padding: 6px 0;
 }
-.menu-bar-content > ul > li:nth-child(4):hover .submenu,
-.menu-bar-content > ul > li:nth-child(7):hover .submenu{
+.menu-bar-content > ul > li:hover .submenu,
+.menu-bar-content > ul > li:hover .submenu{
     display: block;
     transition: all .3s ease;
+}
+.menu-bar-content > ul > li:nth-child(1) .submenu{
+    display: none;
+    transition: all .3s ease;
+}
+.menu-bar-content > ul > li:nth-child(2) .submenu{
+    width: 190px;
+}
+.menu-bar-content > ul > li:nth-child(3) .submenu{
+    width: 240px;
+}
+.menu-bar-content > ul > li:nth-child(4) .submenu{
+    width: 240px;
+}
+.menu-bar-content > ul > li:nth-child(5) .submenu{
+    width: 260px;
+}
+.menu-bar-content > ul > li:nth-child(6) .submenu{
+    width: 190px;
+}
+.menu-bar-content > ul > li:nth-child(7) .submenu{
+    width: 230px;
+}
+.menu-bar-content > ul > li:nth-child(8) .submenu{
+    width: 200px;
+}
+.menu-bar-content > ul > li:nth-child(9) .submenu{
+    width: 150px;
+}
+.menu-bar-content > ul > li:nth-child(10) .submenu{
+    width: 190px;
+    right: 0;
+    left: auto;
 }
 .submenu ul li:hover a{
     color: #FFF200;
@@ -593,7 +626,7 @@ nav ul li:nth-child(9) img{
 }
 /* ***********slider product 1 ********** */
 .slider-product-one-content{
-    background-color: #fed100;
+    background-color: #00BFFF;
     padding: 12px;
 }
 .slider-product-one-content-title h2{
@@ -635,7 +668,7 @@ nav ul li:nth-child(9) img{
     border-radius: 40px;
 }
 .slider-product-one-content-item-text li:first-child p{
-    color: #fff;
+    color: #f0f0f0;
     font-size: 12px;
 }
 .slider-product-one-content-item-text li:first-child img{

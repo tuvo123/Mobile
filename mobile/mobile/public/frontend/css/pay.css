@@ -1,0 +1,189 @@
+.thanhtoan{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #ddd;
+}
+.thanhtoan .container{
+    width: 600px;
+    background-color: #fff;
+}
+.thanh-toan-top{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(188, 255, 184);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.thanh-toan-top i:first-child{
+    color: blue;
+    position: absolute;
+    top: 35px;
+    left: 175px;
+}
+.thanh-toan-top i:nth-child(2){
+    font-size: 30px;
+    color: #298000;
+    margin-right: 10px;
+}
+.thanh-toan-top span{
+    font-size: 16px;
+    font-weight: bold;
+    color: #298000;
+}
+.thanh-toan-bottom{
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+}
+.thanh-toan-bottom-loi-co{
+    margin-bottom: 10px;
+}
+.thanh-toan-bottom-loi-co span{
+    font-weight: bold;
+}
+.thanh-toan-bottom-don-hang{
+    background-color: #efefef;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.thanh-toan-bottom-don-hang .top{
+    display: flex;
+    justify-content: space-between;
+}
+.madonhang,.huydon{
+    display: flex;
+    margin-bottom: 10px;
+}
+.madonhang li:last-child{
+    margin-left: 5px;
+}
+.huydon li:nth-child(2){
+    margin: 0 5px;
+}
+.huydon li:first-child{
+    color: #288ad6;
+    cursor: pointer;
+}
+.huydon li:last-child{
+    color: red;
+    cursor: pointer;
+}
+.thanh-toan-bottom-don-hang .bottom li{
+    list-style:inside;
+    margin-bottom: 10px;
+}
+.thanh-toan-bottom-don-hang .bottom li:last-child{
+    margin: 0;
+}
+.thanh-toan-bottom-don-hang .bottom li:last-child span{
+    color: red;
+    font-weight: bold;
+}
+.thanh-toan-bottom-thong-bao{
+    width: 100%;
+    border: 1px dashed #d56305;
+    border-radius: 5px;
+    height: 40px;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8e5d2;
+}
+.thanh-toan-bottom-thong-bao li{
+    color: #d56305;
+    font-size: 15px;
+}
+.thanh-toan-bottom-hinh-thuc-thanh-toan li{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.thanh-toan-bottom-hinh-thuc-thanh-toan li:nth-child(1){
+    font-weight: bold;
+}
+.thanh-toan-bottom-hinh-thuc-thanh-toan li i{
+    margin: 0 5px;
+}
+.thanh-toan-bottom-xac-nhan,.thanh-toan-bottom-chinh-sach{
+    margin: 0 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thanh-toan-bottom-xac-nhan button{
+    padding: 15px 150px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #333;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.thanh-toan-bottom-xac-nhan button:hover{
+    background-color: #288ad6;
+    color: #fff;
+}
+.thanh-toan-bottom-chinh-sach li{
+    color: #288ad6;
+    cursor: pointer;
+}
+.thanh-toan-bottom-thoi-gian{
+    border-top: 2px solid #ddd;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+.thanh-toan-bottom-thoi-gian h5{
+    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.thanh-toan-bottom-thoi-gian .thong-tin-sp{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.thanh-toan-bottom-thoi-gian .thong-tin-sp b{
+    margin-bottom: 10px;
+}
+.thanh-toan-bottom-thoi-gian .thong-tin-sp .san-pham{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+.thanh-toan-bottom-thoi-gian .thong-tin-sp .san-pham li img{
+    width: 50px;
+}
+.thanh-toan-bottom-thoi-gian .thong-tin-sp .san-pham li:first-child{
+    margin-right: 20px;
+}
+.thanh-toan-bottom-thoi-gian .thong-tin-sp .san-pham li .mau{
+    color: #7a7a7a;
+    display: flex;
+    margin-top: 5px;
+}
+.thanh-toan-bottom-thoi-gian .thong-tin-sp .san-pham li .mau span:first-child{
+    margin-right: 10px;
+}
+.thanh-toan-bottom-thoi-gian .mau-them-sp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thanh-toan-bottom-thoi-gian .mau-them-sp{
+    width: 100%;
+    border: 1px solid #288ad6;
+    height: 40px;
+    border-radius: 5px;
+    color: #288ad6;
+    font-size: 15px;
+    transition: all .3s ease;
+}
+.thanh-toan-bottom-thoi-gian .mau-them-sp:hover{
+    background-color: #288ad6;
+    color: #fff;
+}

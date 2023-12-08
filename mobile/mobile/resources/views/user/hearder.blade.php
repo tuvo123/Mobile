@@ -139,7 +139,8 @@
                     </div>
                 </div>
                 </li>
-                <li id="btn-dangnhap"><a href="#">Đăng nhập / Đăng ký</a></li>
+                <!-- Đăng nhập -->
+                <li id="btn-dangnhap"><a href="#">Đăng nhập</a></li>
                 <div class="form-dang-nhap">
                     <div class="form-dang-nhap-content">
                         <div class="form-dang-nhap-content-dong">Đóng</div>

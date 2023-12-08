@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thế giới di động</title>
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/product_detail.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/product.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/cart.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/order.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/pay.css')}}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -15,12 +20,12 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#"><img style="width: 150px;" src="{{asset('frontend/image/logo1.png')}}" alt="" srcset=""></a></li>
+                <li><a href="/user/main"><img style="width: 90px;" src="{{asset('frontend/image/logoVath.png')}}" alt="" srcset=""></a></li>
                 <li id="adress-form"><a href="#">Đà Nẵng<i class='bx bxs-down-arrow'></i></a> 
                 </li>
                 <li><input type="text" placeholder="Bạn tìm gì..."><i class='bx bx-search-alt-2' ></i></li>
-                <li><a href="cart.html"><button><i class='bx bx-cart'></i>Giỏ hàng</button></a></li>
-                <li><a href="">Lịch sử<br>đơn hàng</a></li>
+                <li><a href="/user/cart"><button><i class='bx bx-cart'></i>Giỏ hàng</button></a></li>
+                <li><a href="/user/order">Lịch sử<br>đơn hàng</a></li>
                 <li><a href=""><span class="btn-content"><span class="btn-top"></span></span>Mua thẻ nạp ngay!</a></li>
                 <li><a href="">24h Công nghệ</a></li>
                 <li><a href="">Hỏi đáp</a></li>
@@ -237,47 +242,118 @@
         <div class="container">
             <div class="menu-bar-content">
                 <ul>
-                    <li><a href="product.html"><i class='bx bx-mobile'></i>Điện thoại</a></li>
-                    <li><a href=""><i class='bx bx-laptop'></i>Laptop</a></li>
-                    <li><a href=""><i class='bx bx-mobile'></i>Tablet</a></li>
-                    <li><a href=""><i class='bx bx-headphone'></i>Phụ kiện<i style="margin-left: 6px;" class='bx bxs-down-arrow'></i></a>
+                    <li><a href="/user/product"><i class='bx bx-mobile'></i>Điện thoại</a></li>
+                    <li>
+                        <a href=""><img src="{{asset('frontend/image/logo-iphone-220x48.png')}}" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
+                        <div class="submenu">
+                                <ul>
+                                    <li><a href="#">Iphone 15 Pro Max</a></li>
+                                    <li><a href="#">Iphone 15 Pro</a></li>
+                                    <li><a href="#">Iphone 15 Plus</a></li>
+                                    <li><a href="#">Iphone 15 </a></li>
+                                    <li><a href="#">Iphone 14 Pro Max</a></li>
+                                    <li><a href="#">Iphone 14 Pro</a></li>
+                                    <li><a href="#">Iphone 12 Pro Max</a></li>
+                                    <li><a href="#">Iphone 12 Plus</a></li>
+                                    <li><a href="#">Iphone 11 Pro Max</a></li>
+                                    <li><a href="#">Iphone 11</a></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="{{asset('frontend/image/samsungnew-220x48-1.png')}}" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
                         <div class="submenu">
                             <ul>
-                                <li><a href="#">Phụ kiện A</a></li>
-                                <li><a href="#">Phụ kiện B</a></li>
-                                <li><a href="#">Phụ kiện C</a></li>
-                                <li><a href="#">Phụ kiện D</a></li>
-                                <li><a href="#">Phụ kiện E</a></li>
-                                <li><a href="#">Phụ kiện F</a></li>
-                                <li><a href="#">Phụ kiện G</a></li>
-                                <li><a href="#">Phụ kiện H</a></li>
-                                <li><a href="#">Phụ kiện I</a></li>
-                                <li><a href="#">Phụ kiện J</a></li>
+                                <li><a href="#">Samsung Galaxy A23 6GB</a></li>
+                                <li><a href="#">Samsung Galaxy A04</a></li>
+                                <li><a href="#">Samsung Galaxy A13</a></li>
+                                <li><a href="#">Samsung Galaxy A53 5G 128GB</a></li>
+                                <li><a href="#">Samsung Galaxy A73 5G 128GB</a></li>
+                                <li><a href="#">Samsung Galaxy S20 FE (8GB/256GB)</a></li>                                
                             </ul>
                         </div>
                     </li>
-                    <li><a href=""><i class='bx bxs-watch-alt'></i>Smart Watch</a></li>
-                    <li><a href=""><i class='bx bxs-watch'></i>Đồng hồ</a></li>
-                    <li><a href=""><i class='bx bxl-windows'></i>PC, Máy in<i style="margin-left: 6px;" class='bx bxs-down-arrow'></i></a>
+                    <li>
+                        <a href=""><img src="{{asset('frontend/image/logo-xiaomi-220x48-5.png')}}" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
                         <div class="submenu">
                             <ul>
-                                <li><a href="#">Phụ kiện A</a></li>
-                                <li><a href="#">Phụ kiện B</a></li>
-                                <li><a href="#">Phụ kiện C</a></li>
-                                <li><a href="#">Phụ kiện D</a></li>
-                                <li><a href="#">Phụ kiện E</a></li>
-                                <li><a href="#">Phụ kiện F</a></li>
-                                <li><a href="#">Phụ kiện G</a></li>
-                                <li><a href="#">Phụ kiện H</a></li>
-                                <li><a href="#">Phụ kiện I</a></li>
-                                <li><a href="#">Phụ kiện J</a></li>
+                                <li><a href="#"> Điện thoại POCO C40</a></li>
+                                <li><a href="#">Xiaomi Redmi Note 11 (6GB/128GB)</a></li>
+                                <li><a href="#">Xiaomi Redmi Note 11S 5G</a></li>
+                                <li><a href="#">Xiaomi Redmi 10 (2022)</a></li>
+</ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="{{asset('frontend/image/vivo-logo-220-220x48-3.png')}}" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#">Vivo Y12s (2021) (3GB/32GB)</a></li>
+                                <li><a href="#">Vivo Y12s (4GB/128GB)</a></li>
+                                <li><a href="#">Vivo Y21</a></li>
+                                <li><a href="#">Vivo Y53s</a></li>
+                                <li><a href="#">Vivo V21 5G</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="">Máy cũ giá rẻ</a></li>
-                    <li><a href="">Sim, Thẻ cào</a></li>
-                    <li><a href="">Trả góp, điện nước</a></li>
+                    <li>
+                        <a href=""><img src="{{asset('frontend/image/OPPO42-b_5.jpg')}}" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#">OPPO Reno8 5G</a></li>
+                                <li><a href="#">OPPO Reno8</a></li>
+                                <li><a href="#">OPPO A96</a></li>
+                                <li><a href="#">OPPO A57 128GB</a></li>
+                                <li><a href="#">OPPO A17</a></li>
+                                <li><a href="#">OPPO Reno8 Z 5G</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href=""><img src="{{asset('frontend/image/Realme42-b_37.png')}}" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#">realme C30s (2GB/32GB)</a></li>
+                                <li><a href="#">realme C55 6GB</a></li>
+                                <li><a href="#"> realme C53 (6GB/128GB)</a></li>
+                                <li><a href="#">realme Series C</a></li>
+                                <li><a href="#">realme Series 9</a></li>
+                                <li><a href="#">realme Series 8</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="{{asset('frontend/image/Mobell42-b_19.jpg')}}" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#">Mobell S37Phụ kiện A</a></li>
+                                <li><a href="#">Mobell S40</a></li>
+                                <li><a href="#">Mobell S61</a></li>
+                                <li><a href="#">Mobell Rock 3</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="{{asset('frontend/image/Masstel42-b_0.png')}}" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#">Masstel PLAY</a></li>
+                                <li><a href="#">Masstel FAMI</a></li>
+                                <li><a href="#">Masstel IZI</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="{{asset('frontend/image/Nokia42-b_21.jpg')}}" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#">Nokia G11 Plus</a></li>
+                                <li><a href="#">Nokia G11 Plus</a></li>
+                                <li><a href="#">Nokia C31</a></li>
+                                <li><a href="#">Phụ kiện D</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
-    </section> 
+    </section>

@@ -4,11 +4,11 @@
                 <div class="slider-content-left">
                     <div class="slider-content-left-top-container">
                         <div class="slider-content-left-top">
-                            <a href=""><img src="frontend/image/slide1.png" alt="" srcset=""></a>
-                            <a href=""><img src="frontend/image/slider2.png" alt="" srcset=""></a>
-                            <a href=""><img src="frontend/image/slider3.png" alt="" srcset=""></a>
-                            <a href=""><img src="frontend/image/slider4.png" alt="" srcset=""></a>
-                            <a href=""><img src="frontend/image/slider5.png" alt="" srcset=""></a>
+                            <a href=""><img src="{{asset('frontend/image/slide1.png')}}" alt="" srcset=""></a>
+                            <a href=""><img src="{{asset('frontend/image/slider2.png')}}" alt="" srcset=""></a>
+                            <a href=""><img src="{{asset('frontend/image/slider3.png')}}" alt="" srcset=""></a>
+                            <a href=""><img src="{{asset('frontend/image/slider4.png')}}" alt="" srcset=""></a>
+                            <a href=""><img src="{{asset('frontend/image/slider5.png')}}" alt="" srcset=""></a>
                         </div>
                         <div class="slider-content-left-top-btn">
                             <i class='bx bx-chevron-left'></i>
@@ -25,14 +25,14 @@
                     </div>
                 </div>
                 <div class="slider-content-right">
-                    <li><a href=""><img src="frontend/image/ban1.png" alt="" srcset=""></a></li>
-                    <li><a href=""><img src="frontend/image/ban2.png" alt="" srcset=""></a></li>
+                    <li><a href=""><img src="{{asset('frontend/image/ban1.png')}}" alt="" srcset=""></a></li>
+                    <li><a href=""><img src="{{asset('frontend/image/ban2.png')}}" alt="" srcset=""></a></li>
                 </div>
             </div>
         </div>
     </section>
     <section class="baner-one">
         <div class="container">
-            <img src="frontend/image/ban3.png" alt="">
+            <img src="{{asset('frontend/image/ban3.png')}}" alt="">
         </div>
     </section>

@@ -266,6 +266,7 @@
     border-radius: 5px;
     font-size: 18px;
     color: #fff;
+    cursor: pointer;
     font-weight: bold;
     background: linear-gradient(180deg,#f79429,#f7712e);
 }

@@ -88,10 +88,10 @@ document.querySelector(".dang-xuat").addEventListener("click", function(){
     document.querySelector(".form-dang-nhap").style.display = "flex";
     document.querySelector(".form-dang-nhap-content").style.display = "block";
 })
-document.querySelector(".login-btn").addEventListener("click", function(){
-    document.querySelector(".formuser").style.display = "none";
-    document.querySelector(".trang-thai-dang-nhap").style.display = "flex";
-    btndn.style.display = "none";
-    document.querySelector(".form-dang-nhap").style.display = "none";
-    document.querySelector(".form-dang-nhap-content").style.display = "none";
-})
+// document.querySelector(".login-btn").addEventListener("click", function(){
+//     document.querySelector(".formuser").style.display = "none";
+//     document.querySelector(".trang-thai-dang-nhap").style.display = "flex";
+//     btndn.style.display = "none";
+//     document.querySelector(".form-dang-nhap").style.display = "none";
+//     document.querySelector(".form-dang-nhap-content").style.display = "none";
+// })

@@ -36,21 +36,21 @@
                     <div class="cart-box-san-pham-left">
                         <div class="cart-box-san-pham-left-img">
                             <div class="cart-box-san-pham-left-img-anh">
-                                <img src="{{asset('frontend/img_main/iphone-15-pro-blue-thumbnew-600x600.jpg')}}" alt="">
+                                <img src="{{asset('frontend/img_main/oppo-a77s-den-thumb-1-2-600x600.jpg')}}" alt="">
                             </div>
                             <div class="cart-box-san-pham-left-img-btnxoa">
                                 <i class='bx bx-x-circle'></i> <span>Xóa</span>
                             </div>
                         </div>
                         <div class="cart-box-san-pham-left-content">
-                            <li>Điện thoại iPhone 15 Pro</li>
+                            <li>Oppo A77s</li>
                             <li>5 khuyến mãi <i class='bx bxs-down-arrow'></i></li>
-                            <li>Màu: Titan xanh <i class='bx bxs-down-arrow'></i></li>
+                            <li>Màu: Đen <i class='bx bxs-down-arrow'></i></li>
                         </div>
                     </div>
                     <div class="cart-box-san-pham-right">
-                        <li>39.890.000<sup>đ</sup></li>
-                        <li>40.990.000 <sup>đ</sup></li>
+                        <li>12.890.000<sup>đ</sup></li>
+                        <li>12.990.000 <sup>đ</sup></li>
                         <li>
                             <span class="giam-sl">-</span>
                             <span class="sl-sp">1</span>
@@ -59,8 +59,8 @@
                     </div>
                 </div>
                 <div class="cart-box-tinh-tong">
-                    <li>Tạm tính (<span>1</span> sản phẩm):</li>
-                    <li>39.890.000<sup>đ</sup></li>
+                    <li>Tạm tính (<span>2</span> sản phẩm):</li>
+                    <li>52.780.000<sup>đ</sup></li>
                 </div>
                 <div class="cart-box-thong-tin-kh">
                     <div class="cart-box-thong-tin-khach-hang">

@@ -429,7 +429,7 @@
                                 <span>Hồ Chí Minh <i class='bx bx-chevron-down'></i></span>
                             </li>
                             <li><b>28.290.000 <sup>đ</sup></b>* <p>28.990.000 <sup>đ</sup></p>-2% <span>Trả góp 0%</span></li>
-                            <li><img src="{{asset('frontend/image/imgtgdi.png')}}" alt=""><b>+28.290</b>điểm tích lũy Quỳ Tặng VIP <i class='bx bx-bolt-circle'></i></li>
+                            <!-- <li><img src="{{asset('frontend/image/imgtgdi.png')}}" alt=""><b>+28.290</b>điểm tích lũy Quỳ Tặng VIP <i class='bx bx-bolt-circle'></i></li> -->
                         </div>
                         <div class="product-detail-show-bottom-right-button-mua">
                             <a href="/user/pay"><button>MUA NGAY</button></a>

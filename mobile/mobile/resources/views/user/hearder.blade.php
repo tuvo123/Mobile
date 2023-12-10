@@ -150,7 +150,8 @@
                     <div class="form-dang-nhap-content">
                         <div class="form-dang-nhap-content-dong">Đóng</div>
                         <h2>Đăng nhập</h2>
-                        <form action="#" method="post">
+                        <form action="/trang-chu/dang-nhap-nguoi-dung" method="post">
+                         
                             <div class="input-container">
                             <i class='bx bxs-envelope'></i>
                                 <input type="email" placeholder="Email" name="email" required>
@@ -168,7 +169,7 @@
                                 <label>Bạn chưa có tài khoản? </label>
                                 <a href="#" id="btn-dang-ki">Đăng ký</a><br>
                             </div>
-                            
+                            @csrf
                         </form>
                     </div>
                     <div class="form-dang-ki-content">

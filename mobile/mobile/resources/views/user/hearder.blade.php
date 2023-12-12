@@ -175,14 +175,20 @@
                     <div class="form-dang-ki-content">
                         <div class="form-dang-ki-content-dong">Đóng</div>
                         <h2>Đăng kí</h2>
-                        <form action="#" method="post">
+                        @if (Session::has('messenger'))
+                        <span>
+                            {{Session::get('messenger')}}
+                        </span>
+                        @endif
+                        <form action="{{URL::to('register')}}" method="post">
+                     
                             <div class="input-container">
                             <i class='bx bxs-user-circle'></i>
-                                <input type="text" placeholder="Họ và tên" name="hoten" required>
+                                <input type="text" placeholder="Họ và tên" name="fullname" required>
                             </div>
                             <div class="input-container">
                                 <i class='bx bxs-user-circle'></i>
-                                    <input type="text" placeholder="Tên tài khoản" name="tentaikhoan" required>
+                                    <input type="text" placeholder="Tên tài khoản" name="useranme" required>
                                 </div>
                             <div class="input-container">
                             <i class='bx bxs-envelope'></i>
@@ -197,18 +203,19 @@
 
                             <div class="input-container">
                             <i class='bx bxs-phone'></i>
-                                <input type="tel" placeholder="Số điện thoại" name="phone" required>
+                                <input type="tel" placeholder="Số điện thoại" name="sdt" required>
                             </div>
 
                             
 
                             <div class="input-container">
                             <i class='bx bxs-home'></i>
-                                <input type="text" placeholder="Địa chỉ" name="address" required>
+                                <input type="text" placeholder="Địa chỉ" name="diachi" required>
                             </div>
+                        
                             
-
-                            <button type="submit" class="registration-btn">Register</button>
+                            @csrf
+                            <button type="submit" class="registration-btn">Đăng ký</button>
                             
                         </form>
                     </div>

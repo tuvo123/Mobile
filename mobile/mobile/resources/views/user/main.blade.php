@@ -10,16 +10,17 @@
                 </div>
                 <div class="slider-product-one-content-container">
                     <div class="slider-product-one-content-items-content">
+
                         <div class="slider-product-one-content-items">
-                     
+                        @foreach ($loadSaleProductIP as $loadSalePro)
                             <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/iphone-11-trang-600x600.jpg')}}" alt="">
+                                <img src="{{asset('frontend/img_main/'.$loadSalePro->image)}}" alt="">
                                 <div class="slider-product-one-content-item-text">
                                     <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>IPhone 11</li>
+                                    <li>{{$loadSalePro->tensp}}</li>
                                     <li>Online giá rẻ</li>
-                                    <li><p>12.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>10.990.000<sup>đ</sup></li>
+                                    <li><p>{{ number_format(intval($loadSalePro->gia2), 0, ',', '.') }}<sup>đ</sup></p><span>-6%</span> </li>
+                                    <li>{{ number_format(intval($loadSalePro->gia1), 0, ',', '.') }}<sup>đ</sup></li>
                                     <li>Quà 400.000<sup>đ</sup></li>
                                     <li>
                                         <i class='bx bxs-star' ></i>
@@ -30,89 +31,19 @@
                                     </li>
                                 </div>
                             </div>
-                      
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/iphone-12-xanh-la-new-2-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>IPhone 12</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>18.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>16.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/iphone-13-pink-2-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>IPhone 13</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>20.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>18.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/iPhone-14-plus-thumb-xanh-1-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>IPhone 14 Plus</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>22.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>20.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/iphone-15-pro-blue-thumbnew-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>IPhone 15 Pro</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>32.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>30.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
+
                         <div class="slider-product-one-content-items">
+                            @foreach ($loadSaleProductDesc as $loadSaleProductDesc)
                             <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/oppo-n2-flip-den-thumb-600x600.jpg')}}" alt="">
+                                <img src="{{asset('frontend/img_main/'.$loadSaleProductDesc->image)}}" alt="">
                                 <div class="slider-product-one-content-item-text">
                                     <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Oppo N2 Flip</li>
+                                    <li>{{$loadSaleProductDesc->tensp}}</li>
                                     <li>Online giá rẻ</li>
-                                    <li><p>22.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>20.990.000<sup>đ</sup></li>
+                                    <li><p>{{number_format(intval($loadSaleProductDesc->gia2), 0, ',', '.')}}<sup>đ</sup></p><span>-6%</span></li>
+                                    <li>{{number_format(intval($loadSaleProductDesc->gia1), 0, ',', '.')}}<sup>đ</sup></li>
                                     <li>Quà 400.000<sup>đ</sup></li>
                                     <li>
                                         <i class='bx bxs-star' ></i>
@@ -123,88 +54,19 @@
                                     </li>
                                 </div>
                             </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/samsung-galaxy-a14-tlte-thumb-den-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Samsung Galaxy A14</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>12.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>10.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/xiaomi-redmi-a2-xanh-duong-thumbnail-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Xiaomi Redmi A2</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>8.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>7.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/samsung-galaxy-a14-5g-thumb-nau-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Samsung Galaxy A14</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>12.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>10.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/vivo-v25-5g-vang-thumb-1-1-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Vivo V25</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>15.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>14.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
+
                         <div class="slider-product-one-content-items">
+                            @foreach ($loadSaleProduct as $loadSaleProduct)
                             <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/vivo-v25-pro-5g-xanh-thumb-1-600x600.jpg')}}" alt="">
+                                <img src="{{asset('frontend/img_main/'.$loadSaleProduct->image)}}" alt="">
                                 <div class="slider-product-one-content-item-text">
                                     <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Vivo V25 Pro</li>
+                                    <li>{{$loadSaleProduct->tensp}}</li>
                                     <li>Online giá rẻ</li>
-                                    <li><p>17.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>16.990.000<sup>đ</sup></li>
+                                    <li><p>{{number_format(intval($loadSaleProduct->gia2), 0,',', '.')}}<sup>đ</sup></p><span>-6%</span></li>
+                                    <li>{{number_format(intval($loadSaleProduct->gia1), 0,',', '.')}}<sup>đ</sup></li>
                                     <li>Quà 400.000<sup>đ</sup></li>
                                     <li>
                                         <i class='bx bxs-star' ></i>
@@ -215,78 +77,7 @@
                                     </li>
                                 </div>
                             </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/realme-c51-xanh-thumbnail-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Realmi C51</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>6.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>5.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/nokia-g22-xanh-thumb-1-2-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Nokia G22</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>2.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>2.590.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/mobell-f209-den-thumb-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Mobell F209</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>3.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>2.990.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="slider-product-one-content-item">
-                                <img src="{{asset('frontend/img_main/oppo-a17-den-thumb-600x600.jpg')}}" alt="">
-                                <div class="slider-product-one-content-item-text">
-                                    <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                                    <li>Oppo A17</li>
-                                    <li>Online giá rẻ</li>
-                                    <li><p>5.990.000<sup>đ</sup></p><span>-6%</span></li>
-                                    <li>5.490.000<sup>đ</sup></li>
-                                    <li>Quà 400.000<sup>đ</sup></li>
-                                    <li>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                        <i class='bx bxs-star' ></i>
-                                    </li>
-                                </div> 
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="slider-product-one-content-btn">
@@ -314,13 +105,13 @@
                 <div class="product-gallery-one-content-product">
                     @foreach ($loadPro as $pro)
                     <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/',$pro->image)}}" alt="">
+                        <img src="{{asset('frontend/img_main/'.$pro->image)}}" alt="">
                         <div class="product-gallery-one-content-product-item-text">
                             <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>{{$pro->masp}}</li>
+                            <li>{{$pro->tensp}}</li>
                             <li>Online giá rẻ</li>
-                            <li><p>{{$pro->gia1}}<sup>đ</sup></p><span>-6%</span></li>
-                            <li>{{$pro->gia2}}<sup>đ</sup></li>
+                            <li><p>{{number_format(intval($pro->gia2),0,',','.') }}<sup>đ</sup></p><span>-6%</span></li>
+                            <li>{{number_format(intval($pro->gia1),0,',','.') }}<sup>đ</sup></li>
                             <li>{{$pro->baohanh}}<sup></sup></li>
                             <li>
                                 <i class='bx bxs-star' ></i>
@@ -332,168 +123,7 @@
                         </div>
                     </div>
                     @endforeach
-                    <!-- <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/iphone-15-plus-256gb-den-thumb-600x600.jpg')}}" alt="">
-                        <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>iPhone 15 Plus</li>
-                            <li>Online giá rẻ</li>
-                            <li><p>33.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>31.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
-                            <li>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/mobell-f309-red-thumb-600x600.jpg')}}" alt="">
-                        <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>Mobell F309</li>
-                            <li>Online giá rẻ</li>
-                            <li><p>5.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>4.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
-                            <li>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/nokia-105-4g-blue-600x600.jpg')}}" alt="">
-                        <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>Nokia 105</li>
-                            <li>Online giá rẻ</li>
-                            <li><p>4.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>4.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
-                            <li>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/oppo-a58-4g-green-thumb-600x600.jpg')}}" alt="">
-                        <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>Oppo A58</li>
-                            <li>Online giá rẻ</li>
-                            <li><p>10.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>9.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
-                            <li>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/realme-c51-xanh-thumbnail-600x600.jpg')}}" alt="">
-                        <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>Realme C51</li>
-                            <li>Online giá rẻ</li>
-                            <li><p>7.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>7.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
-                            <li>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/oppo-find-x5-pro-trang-thumb-1-600x600.jpg')}}" alt="">
-                        <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>Oppo Find X5</li>
-                            <li>Online giá rẻ</li>
-                            <li><p>8.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>7.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
-                            <li>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/samsung-galaxy-a34-thumb-den-600x600.jpg')}}" alt="">
-                        <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>Samsung Galaxy A34</li>
-                            <li>Online giá rẻ</li>
-                            <li><p>6.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>6.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
-                            <li>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/vivo-v27e-tim-thumb-600x600.jpg')}}" alt="">
-                        <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>Vivo V27e</li>
-                            <li>Online giá rẻ</li>
-                            <li><p>9.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>9.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
-                            <li>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/oppo-a57-den-thumb-600x600.jpeg')}}" alt="">
-                        <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>Oppo A57</li>
-                            <li>Online giá rẻ</li>
-                            <li><p>10.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>8.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
-                            <li>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                                <i class='bx bxs-star' ></i>
-                            </li>
-                        </div>
-                    </div> -->
+                   
                 </div>
             </div>
         </div>
@@ -513,46 +143,18 @@
                         <li><a href="">Xem tất cả<i class='bx bxs-right-arrow'></i></a></li>
                     </div>
                     <div class="product-gallery-two-content-left-bottom">
+                        @foreach ($loadProductEnd as $loadProductEnd)
                         <div class="product-gallery-two-content-left-bottom-item">
-                            <img src="{{asset('frontend/img_main/iphone-15-pro-max-blue-thumbnew-600x600.jpg')}}" alt="">
+                            <img src="{{asset('frontend/img_main/'.$loadProductEnd->image)}}" alt="">
                             <div class="product-gallery-two-content-left-bottom-item-text">
-                                <li>Đặt trước đến 16/9</li>
-                                <li>iPhone 15 Pro Max</li>
-                                <li>Hàng sắp về</li>
-                                <li>35.000.000<sup>đ</sup></li>
                                 <li>Ưu đãi khủng</li>
+                                <li>{{$loadProductEnd->tensp}}</li>
+                                <li>{{$loadProductEnd->dungluong1}}</li>
+                                <li>{{number_format(intval($loadProductEnd->gia1),0,',','.')}}<sup>đ</sup></li>
+                                <li>{{$loadProductEnd->baohanh}}</li>
                             </div>
                         </div>
-                        <div class="product-gallery-two-content-left-bottom-item">
-                            <img src="{{asset('frontend/img_main/oppo-find-n3-flip-131023-105239-600x600.jpg')}}" alt="">
-                            <div class="product-gallery-two-content-left-bottom-item-text">
-                                <li>Đặt trước đến 16/9</li>
-                                <li>Oppo Find N3 Flip</li>
-                                <li>Hàng sắp về</li>
-                                <li>20.000.000<sup>đ</sup></li>
-                                <li>Ưu đãi khủng</li>
-                            </div>
-                        </div>
-                        <div class="product-gallery-two-content-left-bottom-item">
-                            <img src="{{asset('frontend/img_main/realme-11-pro-5g-green-thumb-1-600x600.jpg')}}" alt="">
-                            <div class="product-gallery-two-content-left-bottom-item-text">
-                                <li>Đặt trước đến 16/9</li>
-                                <li>Realme 11 Pro</li>
-                                <li>Hàng sắp về</li>
-                                <li>10.000.000<sup>đ</sup></li>
-                                <li>Ưu đãi khủng</li>
-                            </div>
-                        </div>
-                        <div class="product-gallery-two-content-left-bottom-item">
-                            <img src="{{asset('frontend/img_main/samsung-galaxy-z-flip5-xam-thumb-600x600.jpg')}}" alt="">
-                            <div class="product-gallery-two-content-left-bottom-item-text">
-                                <li>Đặt trước đến 16/9</li>
-                                <li>Samsung Galaxy Z Flip5</li>
-                                <li>Hàng sắp về</li>
-                                <li>17.000.000<sup>đ</sup></li>
-                                <li>Ưu đãi khủng</li>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

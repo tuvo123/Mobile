@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\LoadProduct;
 use Illuminate\Http\Request;
 use App\Models\Account;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Session;
 class UploadProduct extends Controller
 {
 
@@ -66,4 +69,5 @@ class UploadProduct extends Controller
     {
         //
     }
+  
 }

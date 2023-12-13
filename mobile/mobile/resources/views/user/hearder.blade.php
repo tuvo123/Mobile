@@ -1,3 +1,7 @@
+<?php
+use Illuminate\Support\Facades\Session;
+// session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +21,17 @@
     <header>
         <img src="{{asset('frontend/image/hinh1.png')}}" alt="" srcset="">
     </header>
+    <div>
+
+    <!-- Thông báo đăng ký thành công -->
+                      <?php
+                            $massege = Session::get('message');
+                            if($massege){
+                               echo "<span class='text-alert' style='color:blue; text-align: center; width:100%;'>$massege</span>";
+                                Session::put('message', null);
+                            }
+                            ?>
+    </div>
     <nav>
         <div class="container">
             <ul>
@@ -29,7 +44,11 @@
                 <li><a href=""><span class="btn-content"><span class="btn-top"></span></span>Mua thẻ nạp ngay!</a></li>
                 <li><a href="">24h Công nghệ</a></li>
                 <li><a href="">Hỏi đáp</a></li>
-                <li class="trang-thai-dang-nhap" ><a class="chinh-sua-user" href="#"><img src="{{asset('frontend/image/download.jpg')}}" alt=""></a>
+                <?php
+                $check_login = intval(Session::get('status')) ;
+                if($check_login == 1){
+                ?>
+                <li class="trang-thai-dang-nhap" style="display:block;"><a class="chinh-sua-user" href="#"><img src="{{asset('frontend/image/download.jpg')}}" alt=""></a>
                 <div class="formuser">
                     <div class="formuser-top">
                         <div class="formuser-top-img">
@@ -144,14 +163,21 @@
                     </div>
                 </div>
                 </li>
+                <?php
+                }
+                ?>
+
                 <!-- Đăng nhập -->
                 <li id="btn-dangnhap"><a href="#">Đăng nhập</a></li>
+                <?php
+                
+                ?>
                 <div class="form-dang-nhap">
                     <div class="form-dang-nhap-content">
                         <div class="form-dang-nhap-content-dong">Đóng</div>
                         <h2>Đăng nhập</h2>
-                        <form action="/trang-chu/dang-nhap-nguoi-dung" method="post">
-                         
+                        <form action="{{URL::to('dang-nhap')}}" method="post">
+             
                             <div class="input-container">
                             <i class='bx bxs-envelope'></i>
                                 <input type="email" placeholder="Email" name="email" required>
@@ -163,7 +189,7 @@
                             </div>
                             <a href="#">Quên mật khẩu</a>
 
-                            <button type="submit" class="login-btn">Login</button>
+                            <button type="submit" class="login-btn">Đăng nhập</button>
 
                             <div class="no-account">
                                 <label>Bạn chưa có tài khoản? </label>
@@ -175,12 +201,8 @@
                     <div class="form-dang-ki-content">
                         <div class="form-dang-ki-content-dong">Đóng</div>
                         <h2>Đăng kí</h2>
-                        @if (Session::has('messenger'))
-                        <span>
-                            {{Session::get('messenger')}}
-                        </span>
-                        @endif
-                        <form action="{{URL::to('register')}}" method="post">
+                        
+                        <form action="{{URL::to('dang-ky')}}" method="post">
                      
                             <div class="input-container">
                             <i class='bx bxs-user-circle'></i>

@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\Users\LoginConTroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\User\MainController;
 use App\Http\Controllers\User\Users\UploadProduct;
 use App\Http\Controllers\User\Users\UserController;
+use App\Http\Controllers\User\Users\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ Route::get('/', function () {
 // Route::get('/lich-su-hoa-don',[UserController::class,'order']);
 // Route::get('/user/order',[UserController::class,'order']);
 // Route::get('/gio-hang',[UserController::class,'cart']);
-// Route::get('/user/product_detail',[UserController::class,'product_detail']);
+Route::get('/user/product_detail',[UserController::class,'product_detail']);
 // Route::get('/user/product', [UserController::class, 'product']);
 // Route::get('/user/pay', [UserConTroller::class, 'pay']);
 // Route::get('/user/order',[UserController::class,'order']);
@@ -41,4 +41,5 @@ Route::get('/', function () {
 Route::resource('/trang-chu', UploadProduct::class);
 
 // Login tài khoản ngườI dùng
-Route::post('/register', [UploadProduct::class, 'store']);
+Route::post('/dang-ky', [LoginController::class, 'register']);
+Route::post('/dang-nhap', [LoginController::class, 'login']);

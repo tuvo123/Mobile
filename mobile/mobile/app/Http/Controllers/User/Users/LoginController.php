@@ -5,6 +5,12 @@ namespace App\Http\Controllers\User\Users;
 use App\Http\Controllers\Controller;
 use App\Models\Account;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB as FacadesDB;
+
 
 class LoginController extends Controller
 {
@@ -14,47 +20,46 @@ class LoginController extends Controller
         return view('user.main');
     }
 
-    public function create()
-    {
-      return view('user.main');
+    public function register(Request $request){
+        $data = array();
+        $data['hoten'] = $request-> fullname;
+        $data['username'] = $request-> useranme;
+        $data['email'] = $request-> email;
+        $data['sdt'] = $request-> sdt;
+        $data['matkhau'] = $request-> password;
+        $data['diachi'] = $request-> diachi;
+        $data['status'] = '0';
+
+         DB::table('taikhoan')->insert($data);
+         Session::put('massege', 'Đăng ký thành công');
+         return Redirect::to('trang-chu');
+    
     }
 
-    // Thêm tài khoản
-    public function store(Request $request)
-    {
-         // Validate dữ liệu được gửi đến từ form đăng ký
-         $validatedData = $request->validate([
-            'fullname' => 'required',
-            'username' => 'required', // Đây chỉ là ví dụ, bạn cần thêm các trường và quy tắc kiểm tra phù hợp
-            'email' => 'required',
-            'password' => 'required',
-            'sdt' => 'required',
-            'diachi' => 'required',
-            
-            //Thêm các trường khác cần validate
-        ]);
-
-        $account = Account::create($request->all($validatedData));
-        return redirect()->route('user.main')->with('messenger', 'Đăng ký thành công');
-    }
-
-    public function show(string $id)
-    {
-     
-    }
-
-    public function edit(string $id)
-    {
-
-    }
-
-    public function update(Request $request, string $id)
-    {
-       
-    }
-
-    public function destroy(string $id)
-    {
+    public function login(Request $request){
+        $user_email = $request->email;
+        $user_password = $request->password;
+        // $user_password = md5($request->admin_password);
         
+        $result =FacadesDB::table('taikhoan')->where('email', $user_email)->where('matkhau', $user_password)->first();
+       
+        if($result){
+            $data = array();
+            $data['status'] = "1";
+
+
+            DB::table('taikhoan')->where('email', $user_email)->update($data);
+
+            Session::put('username', $result->username);
+            Session::put('id', $result->id);
+            Session::put('status', $result->status);
+       
+            Session::put('message', "Đăng nhập thành công");
+            return Redirect::to('/trang-chu');
+     
+        }else{
+            Session::put('message', "Email đăng nhập hoặc mật khẩu không chính xác.");
+            return Redirect::to('/trang-chu');
+        }
     }
 }

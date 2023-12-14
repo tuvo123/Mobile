@@ -23,7 +23,12 @@
                 <li><a href="/user/main"><img style="width: 90px;" src="{{asset('frontend/image/logoVath.png')}}" alt="" srcset=""></a></li>
                 <li id="adress-form"><a href="#">Đà Nẵng<i class='bx bxs-down-arrow'></i></a> 
                 </li>
-                <li><input type="text" placeholder="Bạn tìm gì..."><i class='bx bx-search-alt-2' ></i></li>
+                <li>
+                    <form action="/search" method="get">
+                        <input name="edtsearch" type="text" placeholder="Bạn tìm gì...">
+                        <button><i class='bx bx-search-alt-2' ></i></button>
+                    </form>
+                </li>
                 <li><a href="/user/cart"><button><i class='bx bx-cart'></i>Giỏ hàng</button></a></li>
                 <li><a href="/user/order">Lịch sử<br>đơn hàng</a></li>
                 <li><a href=""><span class="btn-content"><span class="btn-top"></span></span>Mua thẻ nạp ngay!</a></li>
@@ -144,12 +149,14 @@
                     </div>
                 </div>
                 </li>
-                <li id="btn-dangnhap"><a href="#">Đăng nhập / Đăng ký</a></li>
+                <!-- Đăng nhập -->
+                <li id="btn-dangnhap"><a href="#">Đăng nhập</a></li>
                 <div class="form-dang-nhap">
                     <div class="form-dang-nhap-content">
                         <div class="form-dang-nhap-content-dong">Đóng</div>
                         <h2>Đăng nhập</h2>
-                        <form action="#" method="post">
+                        <form action="/trang-chu/dang-nhap-nguoi-dung" method="post">
+                         
                             <div class="input-container">
                             <i class='bx bxs-envelope'></i>
                                 <input type="email" placeholder="Email" name="email" required>
@@ -167,7 +174,7 @@
                                 <label>Bạn chưa có tài khoản? </label>
                                 <a href="#" id="btn-dang-ki">Đăng ký</a><br>
                             </div>
-                            
+                            @csrf
                         </form>
                     </div>
                     <div class="form-dang-ki-content">

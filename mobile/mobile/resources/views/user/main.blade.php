@@ -312,15 +312,19 @@
                     </ul>
                 </div>
                 <div class="product-gallery-one-content-product">
+                    @foreach ($loadPro as $pro)
                     <div class="product-gallery-one-content-product-items">
-                        <img src="{{asset('frontend/img_main/masstel-fami-60-thumb-600x600.jpeg')}}" alt="">
+                        <img src="{{asset('frontend/img_main/'.$pro->img_main)}}" alt="">
                         <div class="product-gallery-one-content-product-item-text">
                             <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
-                            <li>Masstel Fami 60</li>
+                            <li>{{$pro->tensp}}</li>
                             <li>Online giá rẻ</li>
-                            <li><p>3.990.000<sup>đ</sup></p><span>-6%</span></li>
-                            <li>3.590.000<sup>đ</sup></li>
-                            <li>Quà 50.000<sup>đ</sup></li>
+                            <?php
+                            if($pro->gia2!=""){
+                            ?>
+                            <li><p>{{$pro->gia2}}<sup>đ</sup></p><span>-6%</span></li>
+                            <?php } ?>
+                            <li class="giamoi">{{$pro->gia1}}<sup>đ</sup></li>
                             <li>
                                 <i class='bx bxs-star' ></i>
                                 <i class='bx bxs-star' ></i>
@@ -330,7 +334,8 @@
                             </li>
                         </div>
                     </div>
-                    <div class="product-gallery-one-content-product-items">
+                    @endforeach
+                    <!-- <div class="product-gallery-one-content-product-items">
                         <img src="{{asset('frontend/img_main/iphone-15-plus-256gb-den-thumb-600x600.jpg')}}" alt="">
                         <div class="product-gallery-one-content-product-item-text">
                             <li><img src="{{asset('frontend/image/icon.png')}}" alt=""><p>Trợ giá mùa dịch</p></li>
@@ -491,7 +496,7 @@
                                 <i class='bx bxs-star' ></i>
                             </li>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

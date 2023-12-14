@@ -246,27 +246,47 @@
         <div class="container">
             <div class="product-content">
                 <div class="product-content-items">
+                    @foreach($loadsp as $sp)
                     <div class="product-content-item">
                         <div class="product-content-item-uu-dai">
                             <a href="">Trả góp 0%</a>
                         </div>
                         <div class="product-content-item-img">
-                            <img src="{{asset('frontend/img_main/iphone-15-pro-blue-thumbnew-600x600.jpg')}}" alt="">
+                            <img src="{{asset('frontend/img_main/'.$sp->img_main)}}" alt="">
                         </div>
                         <div class="product-content-item-title">
                             <li><img src="{{asset('frontend/image/icon-50x50-2.png')}}" alt="">GIÁ RẺ QUÁ</li>
-                            <li><a href="/user/product_detail">iPhone 15 Pro</a></li>
+                            <li><a href="/user/product_detail">{{$sp->tensp}}</a></li>
                             <li>
                                 <a href="">6.7"</a>
                                 <a href="">Super Retina XDR</a>
                             </li>
                             <li>
-                                <a href="" class="active">256GB</a>
-                                <a href="">512GB</a>
-                                <a href="">1TB</a>
+                                <?php
+                                if($sp->dungluong1!=""){
+                                ?>
+                                <a href="" class="active">{{$sp->dungluong1}}</a>
+                                <?php
+                                }
+                                if($sp->dungluong2!=""){
+                                ?>
+                                <a href="">{{$sp->dungluong2}}</a>
+                                <?php
+                                }
+                                if($sp->dungluong3!=""){
+                                ?>
+                                <a href="">{{$sp->dungluong3}}</a>
+                                <?php
+                                }
+                                if($sp->dungluong4!=""){
+                                ?>
+                                <a href="">{{$sp->dungluong4}}</a>
+                                <?php
+                                }
+                                ?>
                             </li>
-                            <li><p>28.999.000<sup>đ</sup></p><span>-2%</span></li>
-                            <li>28.290.000<sup>đ</sup></li>
+                            <li><p>{{$sp->gia1}}<sup>đ</sup></p><span>-2%</span></li>
+                            <li>{{$sp->gia1}}<sup>đ</sup></li>
                             <li>
                                 <i class='bx bxs-star' ></i>
                                 <i class='bx bxs-star' ></i>
@@ -276,7 +296,8 @@
                             </li>
                         </div>
                     </div>
-                    <div class="product-content-item">
+                    @endforeach
+                    <!-- <div class="product-content-item">
                         <div class="product-content-item-uu-dai">
                             <a href="">Trả góp 0%</a>
                         </div>
@@ -844,8 +865,8 @@
                                 <i class='bx bxs-star' ></i>
                                 <i class='bx bxs-star' ></i>
                             </li>
-                        </div>
-                    </div>
+                        </div> 
+                    </div>-->
                 </div>
             </div>
         </div>

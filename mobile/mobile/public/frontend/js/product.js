@@ -115,9 +115,9 @@ filtertndb.addEventListener("click",function(){
     hientndb = !hientndb;
 })
 
-// const form = document.querySelector(".boloc-du-loai-hang");
-// form.addEventListener("click", (e) => {
-//     if(e.target == form){
-//         form.style.display = "none";
-//     }
-// })
+const form = document.querySelector(".boloc-du-loai-hang");
+form.addEventListener("click", (e) => {
+    if(e.target == form){
+        form.style.display = "none";
+    }
+})

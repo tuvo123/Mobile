@@ -818,7 +818,7 @@ nav ul li:nth-child(9) img{
     margin-left: 7px;
     font-size: 14px;
 }
-.product-gallery-one-content-product-item-text li:nth-child(5){
+.product-gallery-one-content-product-item-text .giamoi{
     font-weight: bold;
 }
 .product-gallery-one-content-product-item-text li:last-child i{

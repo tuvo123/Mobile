@@ -458,6 +458,8 @@
     margin-right: 5px;
 }
 .product-content-item-title li:nth-child(4){
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 10px;
 }
 .product-content-item-title li:nth-child(4) a{

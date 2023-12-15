@@ -5,17 +5,24 @@ namespace App\Http\Controllers\User\Users;
 use App\Http\Controllers\Controller;
 use App\Models\LoadProduct;
 use Illuminate\Http\Request;
-
+use App\Models\Account;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Session;
 class UploadProduct extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        $loadPro = LoadProduct::paginate(10);
-        return view('user.main', compact('loadPro'))->with('i', (request()->input('page', 1)-1)*10);
+         $loadPro = LoadProduct::where('type', 1)->paginate(10);
+         $loadSaleProductIP = LoadProduct::where('type', 0)->orderBy('id', 'asc')->paginate(5);
+         $loadSaleProductDesc = LoadProduct::where('type', 0)->orderBy('id', 'desc')->paginate(5);
+         $loadSaleProduct = LoadProduct::where('type', 0)->paginate(5);
+         $loadProductEnd = LoadProduct::paginate(4);
 
+         return view('user.main', compact('loadPro', 'loadSaleProductIP', 'loadSaleProductDesc', 'loadSaleProduct','loadProductEnd'))
+         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function product(){
         $loadsp = LoadProduct::pagianate(20);
@@ -26,46 +33,47 @@ class UploadProduct extends Controller
      */
     public function create()
     {
-        //
+      return view('user.main');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'fullname' => 'required',
+            'username' => 'required', // Đây chỉ là ví dụ, bạn cần thêm các trường và quy tắc kiểm tra phù hợp
+            'email' => 'required',
+            'password' => 'required',
+            'sdt' => 'required',
+            'diachi' => 'required',
+            
+            //Thêm các trường khác cần validate
+        ]);
+
+        Account::create($request->all($validatedData));
+    
+        return redirect()->route('user.test')->with('messenger', 'Đăng ký thành công');
+     
+    
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //
     }
+  
 }

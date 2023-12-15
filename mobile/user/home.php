@@ -7,6 +7,6 @@
 </head>
 <body>
     <h5>kjsknskvnskv</h5>
-    <a href="../mobile/resources/views/user/main.blade.php">nhấp</a>
+    <a href="../mobile/public/trang-chu">nhấp</a>
 </body>
 </html>

@@ -16,16 +16,8 @@ btnxemthemfooter.addEventListener("click", function(){
     document.querySelector(".footer-top-left-items-bottom").style.display = "block";
     document.querySelector(".footer-top-left-items-btn").style.display = "none";
 })
-const btndn = document.querySelector("#btn-dangnhap");
-btndn.addEventListener("click",function(){
-    document.querySelector(".form-dang-nhap").style.display = "flex";
-    document.querySelector(".form-dang-nhap-content").style.display = "block";
-})
-const btndk = document.querySelector("#btn-dang-ki");
-btndk.addEventListener("click",function(){
-    document.querySelector(".form-dang-nhap-content").style.display  = "none";
-    document.querySelector(".form-dang-ki-content").style.display = "block";
-})
+
+
 const btndongdn = document.querySelector(".form-dang-nhap-content-dong");
 const btndongdk = document.querySelector(".form-dang-ki-content-dong");
 btndongdn.addEventListener("click",function(){
@@ -59,6 +51,7 @@ chinhsuatk.addEventListener("click", function(){
     chinhsuamk.style.display = "none";
     document.querySelector(".chinh-sua-ql").style.display = "flex";
     document.querySelector(".chinh-sua-luu").style.display = "flex";
+    event.preventDefault();
 })
 
 chinhsuamk.addEventListener("click", function(){
@@ -70,6 +63,7 @@ chinhsuamk.addEventListener("click", function(){
     chinhsuamk.style.display = "none";
     document.querySelector(".chinh-sua-ql").style.display = "flex";
     document.querySelector(".chinh-sua-luu").style.display = "flex";
+    event.preventDefault();
 })
 document.querySelector(".chinh-sua-ql").addEventListener("click",function(){
     document.querySelector(".formuser").style.display = "block";
@@ -80,6 +74,7 @@ document.querySelector(".chinh-sua-ql").addEventListener("click",function(){
     chinhsuamk.style.display = "flex";
     document.querySelector(".chinh-sua-ql").style.display = "none";
     document.querySelector(".chinh-sua-luu").style.display = "none";
+    event.preventDefault();
 })
 document.querySelector(".dang-xuat").addEventListener("click", function(){
     document.querySelector(".formuser").style.display = "none";
@@ -87,6 +82,7 @@ document.querySelector(".dang-xuat").addEventListener("click", function(){
     btndn.style.display = "flex";
     document.querySelector(".form-dang-nhap").style.display = "flex";
     document.querySelector(".form-dang-nhap-content").style.display = "block";
+    event.preventDefault();
 })
 // document.querySelector(".login-btn").addEventListener("click", function(){
 //     document.querySelector(".formuser").style.display = "none";
@@ -95,3 +91,33 @@ document.querySelector(".dang-xuat").addEventListener("click", function(){
 //     document.querySelector(".form-dang-nhap").style.display = "none";
 //     document.querySelector(".form-dang-nhap-content").style.display = "none";
 // })
+document.getElementById('muathecao').addEventListener('click', function (){    
+    Swal.fire({
+        icon: 'info',
+        title: 'Thông báo',
+        text: 'Hệ thống đã ngưng cung cấp dịch vụ này.',
+        confirmButtonText: 'Đóng',
+        timer: 3000, 
+        timerProgressBar: true, 
+    });
+    event.preventDefault();});
+document.getElementById('hoidap').addEventListener('click', function (){    
+    Swal.fire({
+        icon: 'info',
+        title: 'Thông báo',
+        text: 'Hệ thống đã ngưng cung cấp dịch vụ này.',
+        confirmButtonText: 'Đóng',
+        timer: 3000, 
+        timerProgressBar: true, 
+    });
+    event.preventDefault();});
+document.getElementById('24hcongnghe').addEventListener('click', function (){    
+    Swal.fire({
+        icon: 'info',
+        title: 'Thông báo',
+        text: 'Hệ thống đã ngưng cung cấp dịch vụ này.',
+        confirmButtonText: 'Đóng',
+        timer: 3000, 
+        timerProgressBar: true, 
+    });
+    event.preventDefault();});

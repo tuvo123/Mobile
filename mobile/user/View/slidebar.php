@@ -17,11 +17,11 @@
                     </div>
                     
                     <div class="slider-content-left-bottom">
-                        <li class="active">Tiêu đề 1</li>
-                        <li>Tiêu đề 2</li>
-                        <li>Tiêu đề 3</li>
-                        <li>Tiêu đề 4</li>
-                        <li>Tiêu đề 5</li>
+                        <li class="active">Điện thoại chất</li>
+                        <li>Samsung hiện đại</li>
+                        <li>Oppo tinh tế</li>
+                        <li>Iphone đẳng cấp</li>
+                        <li>Vivo sang trọng</li>
                     </div>
                 </div>
                 <div class="slider-content-right">

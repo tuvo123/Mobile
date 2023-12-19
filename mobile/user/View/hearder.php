@@ -2,7 +2,43 @@
     include("../Model/connect.php");
   include("../Model/product.php");
     include("../Model/pd_detail.php");
+    
     session_start();
+?>
+<?php
+  include("../Model/login.php");
+  include_once("../lib/session.php");
+  Session::init();
+?>
+<?php
+$check_login = Session::get('userlogin');
+$user_id = Session::get('userId');
+?>
+<?php
+  $user_login = new Login();
+
+  // Đăng ký
+  if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])){
+      $fullname = $_POST['fullname'];
+      $username = $_POST['username'];
+      $email = $_POST['email'];
+      $hash = $_POST['password'];
+      $password = hash('sha256', $hash);
+      $phone = $_POST['phone'];
+      $address = $_POST['address'];
+  
+      $user_register = $user_login->register($fullname, $username, $email, $password, $phone, $address);
+  }
+
+  // Đăng nhập
+  if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])){
+      $email = $_POST['email'];
+      $hash = $_POST['password'];
+      $password = hash('sha256', $hash);
+
+      $user_signin = $user_login->login($email, $password);
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +55,8 @@
     <link rel="stylesheet" href="../css/order.css">
     <link rel="stylesheet" href="../css/pay.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
     
@@ -40,7 +78,7 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="main.php"><img style="width: 90px;" src="../image/logoVath.png" alt="" srcset=""></a></li>
+                <li><a href="index.php"><img style="width: 90px;" src="../image/logoVath.png" alt="" srcset=""></a></li>
                 <li id="adress-form"><a href="#">Đà Nẵng<i class='bx bxs-down-arrow'></i></a> 
                 </li>
                 <li>
@@ -51,94 +89,113 @@
                 </li>
                 <li><a href="cart.php"><button><i class='bx bx-cart'></i>Giỏ hàng</button></a></li>
                 <li><a href="order.php">Lịch sử<br>đơn hàng</a></li>
-                <li><a href=""><span class="btn-content"><span class="btn-top"></span></span>Mua thẻ nạp ngay!</a></li>
-                <li><a href="">24h Công nghệ</a></li>
-                <li><a href="">Hỏi đáp</a></li>
+                <li id="muathecao"><a href=""><span class="btn-content"><span class="btn-top"></span></span>Mua thẻ nạp ngay!</a></li>
+                <li id="24hcongnghe"><a href="">24h Công nghệ</a></li>
+                <li id="hoidap"><a href="">Hỏi đáp</a></li>
                 <?php
-                // $check_login = intval(Session::get('status')) ;
-                // if($check_login == 1){
+                  if($check_login == false){
+                    ?>
+                <li class="trang-thai-dang-nhap" style="display:none;"></li>
+                <li id="btn-dangnhap" style="display:block;"><a href="#">Đăng nhập</a></li>
+                
+                <?php
+                  }
+                ?>
+                <?php
+                if($check_login == true){
                 ?>
                 <li class="trang-thai-dang-nhap" style="display:block;"><a class="chinh-sua-user" href="#"><img src="../image/download.jpg" alt=""></a>
                 <div class="formuser" style="display: none;">
                     <div class="formuser-top">
                         <div class="formuser-top-img">
                             <div class="formuser-top-img-edit">
-                                 <img src="../image/download.jpg" alt="">
+                                 <img src="../image/download.jpg" alt="" >
                             </div>
                            
                             
                         </div>
                         <div class="formuser-top-file">
                             
-                            <input type="file" name="addanh" id="addanh" style="display: none;">
-                            <label for="addanh">
-                                <i class='bx bxs-pencil'></i>
-                            </label>
+                                <input type="file" accept="image/*" name="addanh" id="addanh" style="display: none;">
+                                <label for="addanh">
+                                    <i class='bx bxs-pencil'></i>
+                                </label>
+
                         </div>
                     </div>
+                    <?php 
+                        $pro=new Product();
+                        $ttdangnhap= $pro->getInformationUser($user_id);
+                       while($infor=$ttdangnhap->fetch()){                        
+                    ?>
                     <div class="formuser-bottom">
                         <span><div class="ttincanhan-left">
                             Họ và tên:
                         </div>
                         <div class="ttincanhan-right">
-                            Nguyễn Văn B
+                            <?php echo $infor['name']; ?>
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Tên TK:
                         </div>
                         <div class="ttincanhan-right">
-                            nguyenvanb
+                        <?php echo $infor['username']; ?>
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Số ĐT:
                         </div>
                         <div class="ttincanhan-right">
-                            0123456789
+                        <?php echo $infor['phone']; ?>
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Email:
                         </div>
                         <div class="ttincanhan-right">
-                            nguyenvanb@gmail.com
+                        <?php echo $infor['email']; ?>
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Địa chỉ:
                         </div>
                         <div class="ttincanhan-right">
-                            Vườn Lài, Tân Phú, TP.Hồ Chí Minh
+                        <?php echo $infor['address']; ?>
                         </div> </span>
 
                     </div>
+                    <?php
+                    $oldpass=$infor['password'];
+                        }                        
+                    ?>
+                <form action="" method="post">    
                     <div class="formuser-edit">
                         <span><div class="ttincanhan-left">
                             Họ và tên:
                         </div>
                         <div class="ttincanhan-right">
-                            <input type="text" placeholder="Nhập tên">
+                            <input  type="text" placeholder="Nhập tên" name="txtHoten" id="txtHoten">
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Tên TK:
                         </div>
                         <div class="ttincanhan-right">
-                            <input type="text" placeholder="Nhập tên tài khoản">
+                            <input type="text" placeholder="Nhập tên tài khoản" name="txtTentk" id="txtTentk">
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Số ĐT:
                         </div>
                         <div class="ttincanhan-right">
-                            <input type="text" placeholder="Nhập số ĐT">
+                            <input type="text" placeholder="Nhập số ĐT" name="txtSodt" id="txtSodt">
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Email:
                         </div>
                         <div class="ttincanhan-right">
-                            <input type="text" placeholder="Nhập Email">
+                            <input type="text" placeholder="Nhập Email" name="txtEmail" id="txtEmail">
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Địa chỉ:
                         </div>
                         <div class="ttincanhan-right">
-                            <input type="text" placeholder="Nhập địa chỉ">
+                            <input type="text" placeholder="Nhập địa chỉ" name="txtDiachi" id="txtDiachi">
                         </div> </span>
 
                     </div>
@@ -147,30 +204,137 @@
                             Nhập mật khẩu cũ:
                         </div>
                         <div class="ttincanhan-right">
-                            <input type="password" placeholder="Nhập MK cũ">
+                            <input type="password" placeholder="Nhập MK cũ" name="txtPass">
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Nhập mật khẩu mới:
                         </div>
                         <div class="ttincanhan-right">
-                            <input type="password" placeholder="Nhập MK mới">
+                            <input type="password" placeholder="Nhập MK mới" name="txtNewpass">
                         </div> </span>
                         <span><div class="ttincanhan-left">
                             Nhập lại mật khẩu:
                         </div>
                         <div class="ttincanhan-right">
-                            <input type="password" placeholder="Nhập lại MK">
+                            <input type="password" placeholder="Nhập lại MK" name="txtRepass">
                         </div> </span>                        
                     </div>
+                    <style>
+                        #Luuthaydoi{
+                            border-radius:100%;
+                        }
+                        #chuyensangadmin{
+                            border-radius:100%;
+                        }
+                        #dangxuat{
+                            border-radius:100%;
+                        }
+                        
+                    </style>
                     <div class="formuse-dangxuat">
-                        <span class="chinh-sua-tk"><i class='bx bx-edit-alt'></i><div class="thongbao-user">Chỉnh sửa thông tin</div></span>
-                        <span class="chinh-sua-mk"><i class='bx bx-key'></i><div class="thongbao-user">Đổi mật khẩu</div></span>
-                        <span class="chinh-sua-ql"><i class='bx bx-arrow-back'></i><div class="thongbao-user">Quay lại</div></span>
-                        <span class="chinh-sua-luu"><i class='bx bxs-save'></i><div class="thongbao-user">Lưu thay đổi</div></span>
-                        <span class="chuyen-admin"><i class='bx bxs-user-circle'></i><div class="thongbao-user">Chuyển sang admin</div></span>
-                        <span class="dang-xuat"><i class='bx bx-log-out'></i><div class="thongbao-user">Đăng xuất</div></span>
-
+                        <button id="chinhsuatk"  class="chinh-sua-tk"><i class='bx bx-edit-alt' style="font-size: 20px;padding:10px;"></i><label class="thongbao-user" style="display:none;">Chỉnh sửa thông tin</label></button>       
+                        <button id="chinhsuamk" class="chinh-sua-mk"><i class='bx bx-key' style="font-size: 20px;padding:10px;"></i><label class="thongbao-user" style="display:none;">Đổi mật khẩu</label></button>
+                        <button id="chinhsuaql" name="Quaylai" class="chinh-sua-ql" style="display:none;"><i class='bx bx-arrow-back' style="font-size: 20px;padding:10px;"></i><label  class="thongbao-user" style="display:none;">Quay lại</label></button>
+                        <button type="submit" id="Luuthaydoi" name="Luuthaydoi" value=""><label class="chinh-sua-luu" for="Luuthaydoi" ><i class='bx bxs-save' style="font-size: 20px;padding:10px;"></i><label style="display:none;" class="thongbao-user">Lưu thay đổi</label></label></button>
+                        <button type="submit" name="Chuyensangadmin" id="chuyensangadmin"><label class="chuyen-admin" for="Chuyensangadmin"><i class='bx bxs-user-circle' style="font-size: 20px; padding:10px;"></i></label></button><label style="display:none;"  class="thongbao-user">Chuyển sang admin</label>
+                        <button type="submit" name="Dangxuat" id="dangxuat" ><label class="dang-xuat" for="Dangxuat"><i class='bx bx-log-out' style="font-size: 20px; padding:10px;"></i><label  class="thongbao-user" style="display:none;">Đăng xuất</label></label></button>
+                        
                     </div>
+                </form> 
+                <?php 
+                if($_SERVER["REQUEST_METHOD"]=="POST"){
+                    $Hoten=$_POST['txtHoten'];
+                    $Tentk=$_POST['txtTentk'];
+                    $Sodt=$_POST['txtSodt'];
+                    $Email=$_POST['txtEmail'];
+                    $Diachi=$_POST['txtDiachi'];
+                    $pass=$_POST['txtPass'];
+                    $Newpass=$_POST['txtNewpass'];
+                    $Repass=$_POST['txtRepass'];
+                    $pro=new Product();
+                    if(isset($_POST['Luuthaydoi'])){                        
+                         if(!empty($pass)&&!empty($Newpass)&&(!empty($Repass))){
+                                    $ttdangnhap= $pro->getInformationUser($user_id);
+                                    
+                            while($infor=$ttdangnhap->fetch()){ 
+                                $oldpass=$infor['password'];
+                            } 
+                            
+                            if($pass==$oldpass&&$Newpass==$Repass){
+                                $update=$pro->UpdatePass(2,$Newpass); 
+                                echo "<script>    
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: 'Thông báo',
+                                                text: 'Cập nhật mật khẩu thành công!.',
+                                                confirmButtonText: 'Đóng',
+                                                timer: 3000, 
+                                                timerProgressBar: true, 
+                                            });
+                                            event.preventDefault();
+                                </script>;";
+                            }
+                            else{
+                                if($pass!=$oldpass){
+                                    echo "<script>    
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Thông báo',
+                                                text: 'Mật khẩu không đúng!.',
+                                                confirmButtonText: 'Đóng',
+                                                timer: 3000, 
+                                                timerProgressBar: true, 
+                                            });
+                                            event.preventDefault();
+                                </script>;";
+                                }
+                                else if($Newpass!=$Repass){
+                                    echo "<script>
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Thông báo',
+                                                text: 'Nhập lại mật khẩu không khớp!.',
+                                                confirmButtonText: 'Đóng',
+                                                timer: 3000, 
+                                                timerProgressBar: true, 
+                                            });
+                                            event.preventDefault();
+                                </script>;";
+                                }
+                            }
+
+                        }
+                        else{ 
+                            $update=$pro->UpdateInformationUser($user_id,$Hoten,$Tentk,$Email,$Sodt,$Diachi);
+                            echo "<script>    
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: 'Thông báo',
+                                                text: 'Cập nhật mật khẩu thành công!.',
+                                                confirmButtonText: 'Đóng',
+                                                timer: 3000, 
+                                                timerProgressBar: true, 
+                                            });
+                                            event.preventDefault();
+                                </script>;";
+                        }
+                    }
+                    if(isset($_POST['Dangxuat'])){
+                        echo '<script>document.querySelector(".dang-xuat").addEventListener("click", function(){
+                            document.querySelector(".formuser").style.display = "none";
+                            document.querySelector(".trang-thai-dang-nhap").style.display = "none";
+                            document.querySelector(".btn-dang-nhap").style.display="block";
+                            btndn.style.display = "flex";
+                            document.querySelector(".form-dang-nhap").style.display = "flex";
+                            document.querySelector(".form-dang-nhap-content").style.display = "block";
+                            event.preventDefault();
+                        })</script>;';
+                    }
+                        ob_start();
+                        Session::destroy();
+                        echo "<meta http-equiv='refresh' content='0;URL=?id=live'>";
+                        ob_end_flush(); 
+                } ?>
                 </div>
                 </li>
                 <?php
@@ -178,15 +342,21 @@
                 ?>
 
                 <!-- Đăng nhập -->
-                <li id="btn-dangnhap"><a href="#">Đăng nhập</a></li>
-                <?php
                 
+                <?php
+                }
                 ?>
+
                 <div class="form-dang-nhap">
                     <div class="form-dang-nhap-content">
                         <div class="form-dang-nhap-content-dong">Đóng</div>
                         <h2>Đăng nhập</h2>
-                        <form action="{{URL::to('dang-nhap" method="post">
+                        <?php
+                            if(isset($user_signin)){
+                                echo $user_signin;
+                            }
+                        ?>
+                        <form action="" method="post">
              
                             <div class="input-container">
                             <i class='bx bxs-envelope'></i>
@@ -199,20 +369,27 @@
                             </div>
                             <a href="#">Quên mật khẩu</a>
 
-                            <button type="submit" class="login-btn">Đăng nhập</button>
+                            <button type="submit" name="login" class="login-btn">Đăng nhập</button>
 
                             <div class="no-account">
                                 <label>Bạn chưa có tài khoản? </label>
                                 <a href="#" id="btn-dang-ki">Đăng ký</a><br>
                             </div>
-                            @csrf
+                    
                         </form>
                     </div>
                     <div class="form-dang-ki-content">
                         <div class="form-dang-ki-content-dong">Đóng</div>
                         <h2>Đăng kí</h2>
                         
-                        <form action="{{URL::to('dang-ky" method="post">
+                        <?php
+                        if(isset($user_register)){
+                            echo $user_register;
+                            // unset($_SESSION['insert_customer']) ;
+                            // $_SESSION['insert_customer']= $insert_customer;                      
+                        }
+                        ?>
+                        <form action="" method="post">
                      
                             <div class="input-container">
                             <i class='bx bxs-user-circle'></i>
@@ -220,7 +397,7 @@
                             </div>
                             <div class="input-container">
                                 <i class='bx bxs-user-circle'></i>
-                                    <input type="text" placeholder="Tên tài khoản" name="useranme" required>
+                                    <input type="text" placeholder="Tên tài khoản" name="username" required>
                                 </div>
                             <div class="input-container">
                             <i class='bx bxs-envelope'></i>
@@ -235,22 +412,31 @@
 
                             <div class="input-container">
                             <i class='bx bxs-phone'></i>
-                                <input type="tel" placeholder="Số điện thoại" name="sdt" required>
+                                <input type="tel" placeholder="Số điện thoại" name="phone" required>
                             </div>
 
                             
 
                             <div class="input-container">
                             <i class='bx bxs-home'></i>
-                                <input type="text" placeholder="Địa chỉ" name="diachi" required>
+                                <input type="text" placeholder="Địa chỉ" name="address" required>
                             </div>
-                        
-                            
-                            @csrf
-                            <button type="submit" class="registration-btn">Đăng ký</button>
+                            <button type="submit" name="register" id="sign-up-btn" class="registration-btn">Đăng ký</button>
                             
                         </form>
                     </div>
+                    <script>
+                    const btndn = document.querySelector("#btn-dangnhap");
+                    btndn.addEventListener("click",function(){
+                        document.querySelector(".form-dang-nhap").style.display = "flex";
+                        document.querySelector(".form-dang-nhap-content").style.display = "block";
+                    })
+                    const btndk = document.querySelector("#btn-dang-ki");
+                        btndk.addEventListener("click",function(){
+                            document.querySelector(".form-dang-nhap-content").style.display  = "none";
+                            document.querySelector(".form-dang-ki-content").style.display = "block";
+                        })
+                </script>
                 </div>
                 <div class="adress-form">
                     <div class="adress-form-content">

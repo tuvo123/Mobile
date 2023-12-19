@@ -128,5 +128,24 @@
             $result = $db->exec($query);
             return $result;
         }
+        function getInformationUser($id){
+            $db=new connect();
+            $select="SELECT * FROM users WHERE id=$id LIMIT 1";
+            $result=$db->getList($select);
+            return $result;
+        }
+        function UpdateInformationUser($id,$hoten,$tentaikhoan,$email,$sodt,$diachi){
+            $db=new connect();
+            $insert="UPDATE  users SET name='$hoten', username='$tentaikhoan', email='$email', phone='$sodt', address='$diachi' WHERE id='$id'";
+            $result=$db->exec($insert);
+            return $result;
+        }
+        function UpdatePass($id,$newpass){
+            $db=new connect();
+            $insert="UPDATE users SET password='$newpass' WHERE id='$id'";
+            $result=$db->exec($insert);
+            return $result;
+        }
+
     }
 ?>

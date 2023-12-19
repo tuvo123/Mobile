@@ -2,6 +2,7 @@
 include("hearder.php");
     $pd_detail = new Pd_detail();
     $idsp = $_GET['id'];
+    $user_id = Session::get('userId');
     $cctsp = $pd_detail->getdetail($idsp);
     while($ttsp=$cctsp->fetch()){
  ?>
@@ -460,11 +461,14 @@ include("hearder.php");
                         </div>
                         <?php 
                             if(isset($_POST['muangay'])){
-                                $themhoadon=$pd_detail->inserthoadonw(1,1,date('Y-m-d H:i:s'),$giaban);
+                                $ordercode = rand(000000, 999999);
+                                $currentDate = new DateTime(); // Ngày tháng năm hiện tại
+                                $ngaythang = $currentDate->format('Y-m-d H:i:s');
+                                $themhoadon=$pd_detail->inserthoadonw($user_id,$giaban,$ordercode,$ttsp['id'],1,$giaban,$ngaythang);
                                 // $themhoadon=$pd_detail->inserthoadonw(1,1,$giaban);
                                 $idhoadonmua = $pd_detail->getmahoadon();
                                 $idhoadon = $idhoadonmua->fetch();
-                                $themcthoadon = $pd_detail->insertchitiethoadon($idhoadon['id'],$ttsp['id'],1,$giaban,0,$giaban);
+                                $themcthoadon = $pd_detail->insertchitiethoadon($idhoadon['id'],$ttsp['id'],1,$giaban,0,$giaban,$ordercode);
                                 if($themcthoadon && $themhoadon){
                                     echo "<script>alert('Bạn đã đặt hàng thành công');window.location.href='pay.php?idhoadon='".$idhoadon['id'].";</script>";
                                 }
@@ -477,7 +481,7 @@ include("hearder.php");
                                 $spdt = $pd_detail->ktragiohang($ttsp['id']);
                                 $ktsptsp = $spdt->fetch();
                                 if($ktsptsp['sosp'] == 0){
-                                    $themgiohang = $pd_detail->insertgiohang(1,$ttsp['id'],$dungluongchonten,$mauchonten,1,$giaban,'đã thêm');
+                                    $themgiohang = $pd_detail->insertgiohang($user_id,$ttsp['id'],$dungluongchonten,$mauchonten,1,$giaban,'đã thêm');
                                     if($themgiohang){
                                         echo "<script>alert('Đã thêm vào giỏ hàng thành công')</script>";
                                     }

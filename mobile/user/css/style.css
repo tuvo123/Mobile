@@ -324,6 +324,29 @@ nav ul li:nth-child(9) img{
 .formuse-dangxuat span:hover .thongbao-user{
     display: block;
 }
+
+.formuse-dangxuat button{
+    margin: 5px;
+    border: #ddd;
+    border-radius: 100%;
+}
+
+.formuse-dangxuat button:hover .thongbao-user{
+    position: absolute;
+    width: 150px;
+    top: 120%;
+    transition: all .3s ease;
+    left: 0;
+}
+.formuse-dangxuat button:hover{
+    border: 2px solid #125ef5;
+}
+.formuse-dangxuat button:hover i{
+    color: #125ef5;
+}
+.formuse-dangxuat button i{
+    font-size: 20px;
+}
 /* ******************menu-bar************* */
 .menu-bar{
     background-color: #3498db;

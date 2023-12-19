@@ -17,31 +17,25 @@ class Pd_detail{
         $result = $connect->exec($query);
         return $result;
     }
-    function inserthoadonw($department_id,$userid, $ngaytao,$tongtien){
+    function inserthoadonw($userid,$tongtien, $ordercode,$pdid,$qualiti,$price,$ngaytao){
         $connect = new connect();
-        $query = "INSERT INTO hoadonmua(department_id, user_id, created_at, tongtien)
-            VALUES ('$department_id', '$userid','$ngaytao' , '$tongtien')";
+        $query = "INSERT INTO hoadonban( user_id,tongtien,created_at,trangthai, order_code, product_id, quantity, price)
+            VALUES ( '$userid', '$tongtien','$ngaytao','0', '$ordercode','$pdid','$qualiti','$price')";
         $result = $connect->exec($query);
         return $result;
     }
-    // function inserthoadonw($department_id,$userid, $tongtien){
-    //     $connect = new connect();
-    //     $query = "INSERT INTO hoadonmua(department_id, user_id,tongtien)
-    //         VALUES ($department_id, $userid, $tongtien)";
-    //     $result = $connect->exec($query);
-    //     return $result;
-    // }
+    
     function getmahoadon(){
         $connect=new connect();
-        $query = "select id from hoadonmua order by id desc limit 1";
+        $query = "select id from hoadonban order by id desc limit 1";
         $result = $connect->exec($query);
         return $result;
     }
-    function insertchitiethoadon($mahd,$idsp,$slmua,$giamua,$giamgia,$thanhtien){
+    function insertchitiethoadon($mahd,$idsp,$slmua,$giamua,$giamgia,$thanhtien,$ordercode){
         $connect = new connect();
-        $query = "INSERT INTO chitiet_hdonmua(
-            mahdmua, sanpham_id, soluongmua, giamua, giamgia, thanhtien)
-            VALUES ($mahd, $idsp, '$slmua', '$giamua', '$giamgia', '$thanhtien');";
+        $query = "INSERT INTO chitiet_hdonban(
+            mahdban, sanpham_id, soluongban, dongia, giamgia, thanhtien,order_code)
+            VALUES ($mahd, $idsp, '$slmua', '$giamua', '$giamgia', '$thanhtien','$ordercode');";
         $result = $connect->exec($query);
         return $result;
     }

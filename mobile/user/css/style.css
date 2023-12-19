@@ -665,7 +665,7 @@ nav ul li:nth-child(9) img{
 }
 .slider-product-one-content-item-text li:first-child{
     height: 30px;
-    width: 70%;
+    width: 80%;
     background-color: #de8b05;
     display: inline-block;
     margin-bottom: 20px;
@@ -786,7 +786,7 @@ nav ul li:nth-child(9) img{
 }
 .product-gallery-one-content-product-item-text li:first-child{
     height: 30px;
-    width: 70%;
+    width: 80%;
     background-color: #de8b05;
     display: inline-block;
     margin-bottom: 20px;
@@ -823,6 +823,9 @@ nav ul li:nth-child(9) img{
     padding: 1px 2px 2px 2px;
     margin-left: 7px;
     font-size: 14px;
+}
+.product-gallery-one-content-product-item-text li:nth-child(5){
+    font-weight: bold;
 }
 .product-gallery-one-content-product-item-text .giamoi{
     font-weight: bold;
@@ -1122,7 +1125,7 @@ nav ul li:nth-child(9) img{
     display: flex;
     flex-wrap: wrap;
 }
-.tim-kiem-nhieu-content-item li{
+.tim-kiem-nhieu-content-item a{
     margin-right: 25px;
     margin-bottom: 15px;
     font-size: 13px;

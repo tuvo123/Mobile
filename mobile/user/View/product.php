@@ -1,6 +1,38 @@
 <?php
     include("hearder.php");
-    include("slidebar.php");
+    // include("slidebar.php");
+    $pro = new Product();
+    
+    if(isset($_GET['edtsearch'])){
+        $tongsptk = $pro->demsearch($_GET['edtsearch']);
+        $sotongsp=$tongsptk->fetch();
+    }
+    elseif(isset($_GET['idtrade'])){
+        $tongsptk = $pro->demfiltetrademark($_GET['idtrade']);
+        $sotongsp=$tongsptk->fetch();
+    }
+    elseif(isset($_GET['giabe'])&&isset($_GET['gialon'])){
+        $tongsptk = $pro->demloctheogia($_GET['giabe'],$_GET['gialon']);
+        $sotongsp=$tongsptk->fetch();
+    }
+    elseif(isset($_GET['ram'])){
+        $tongsptk = $pro->demloctheoram($_GET['ram']);
+        $sotongsp=$tongsptk->fetch();
+    }
+    elseif(isset($_GET['rom'])){
+        $tongsptk = $pro->demloctheorom($_GET['rom']);
+        $sotongsp=$tongsptk->fetch();
+    }
+    elseif(isset($_GET['loaidt'])){
+        $tongsptk = $pro->demloctheoloaidt($_GET['loaidt']);
+        $sotongsp=$tongsptk->fetch();
+    }
+    else{
+        $tongsp = $pro->gettongsp();
+        $sotongsp = $tongsp->fetch();
+    }
+    
+    
 ?>
 <section class="boloc">
         <div class="container">
@@ -11,126 +43,95 @@
                     
                     <div class="boloc-du-loai-hang">
                         <div class="muiten"></div>
-                        <a href=""><img src="../image/logo-iphone-220x48.png" alt=""></a>
-                        <a href=""><img src="../image/samsungnew-220x48-1.png" alt=""></a>
-                        <a href=""><img src="../image/OPPO42-b_5.jpg" alt=""></a>
-                        <a href=""><img src="../image/logo-xiaomi-220x48-5.png" alt=""></a>
-                        <a href=""><img src="../image/vivo-logo-220-220x48-3.png" alt=""></a>
-                        <a href=""><img src="../image/Realme42-b_37.png" alt=""></a>
-                        <a href=""><img src="../image/Nokia42-b_21.jpg" alt=""></a>
-                        <a href=""><img src="../image/Masstel42-b_0.png" alt=""></a>
-                        <a href=""><img src="../image/Mobell42-b_19.jpg" alt=""></a>
-                        <a href=""><img src="../image/Itel42-b_54.jpg" alt=""></a>
+                        <?php
+                        for($dthoai = 1;$dthoai<10;$dthoai++){
+                            $iphone = $pro->filtetrademark($dthoai);
+                            $thuonghieu = $pro -> gettrademark($dthoai);
+                            ?>
+                        <a href="product.php?idtrade=<?php echo $dthoai ?>"><img src="../image/<?php while($qqqq = $thuonghieu->fetch()){ echo $qqqq['avatar'];} ?>" alt=""></a>
+                        <?php } ?>
+                        
     
                     </div>
                     </li>
                     <li id="boloc-gia">Giá <i class='bx bxs-down-arrow'></i>
                         <div class="boloc-du-loai-gia">
                             <div class="muiten"></div>
-                            <a href="">Dưới 2 triệu</a>
-                            <a href="">Từ 2 - 4 triệu</a>
-                            <a href="">Từ 4 - 7 triệu</a>
-                            <a href="">Từ 7 - 13 triệu</a>
-                            <a href="">Từ 13 - 20 triệu</a>
-                            <a href="">Trên 20 triệu</a>
+                            <a href="product.php?giabe=0&gialon=2000000">Dưới 2 triệu</a>
+                            <a href="product.php?giabe=2000000&gialon=4000000">Từ 2 - 4 triệu</a>
+                            <a href="product.php?giabe=4000000&gialon=7000000">Từ 4 - 7 triệu</a>
+                            <a href="product.php?giabe=7000000&gialon=13000000">Từ 7 - 13 triệu</a>
+                            <a href="product.php?giabe=13000000&gialon=20000000">Từ 13 - 20 triệu</a>
+                            <a href="product.php?giabe=20000000&gialon=28000000">Từ 20 - 28 triệu</a>
+                            <a href="product.php?giabe=28000000&gialon=50000000">Trên 28 triệu</a>
                         </div>
                     </li>
                     <li id="boloc-loai-dt">Loại điện thoại <i class='bx bxs-down-arrow'></i>
                         <div class="boloc-du-loai-dt">
                             <div class="muiten"></div>
-                            <a href=""><div><img src="../img_main/oppo-a77s-den-thumb-1-2-600x600.jpg" alt=""></div><br>Android</a>
-                            <a href=""><div><img src="../img_main/iphone-14-pro-max-tim-thumb-600x600.jpg" alt=""></div><br>iPhone (iOS)</a>
-                            <a href=""><div><img src="../img_main/nokia-110-4g-blue-600x600.jpg" alt=""></div><br>Điện thoại phổ thông</a>
+                            <a href="product.php?loaidt=android"><div><img src="../img_main/oppo-a77s-den-thumb-1-2-600x600.jpg" alt=""></div><br>Android</a>
+                            <a href="product.php?loaidt=ios"><div><img src="../img_main/iphone-14-pro-max-tim-thumb-600x600.jpg" alt=""></div><br>iPhone (iOS)</a>
+                            <a href="product.php?loaidt=dtpt"><div><img src="../img_main/nokia-110-4g-blue-600x600.jpg" alt=""></div><br>Điện thoại phổ thông</a>
                         
                         </div>
-                    </li>
-                    <li id="boloc-nhu-cau">Nhu cầu <i class='bx bxs-down-arrow'></i>
-                        <div class="boloc-du-loai-nhu-cau">
-                                <div class="muiten"></div>
-                                <a href="">Chơi game / Cấu hình cao</a>
-                                <a href="">Pin khủng trên 5000 mAh</a>
-                                <a href="">Chụp ảnh, quay phim</a>
-                                <a href="">Livestream</a>
-                                <a href="">Mỏng nhẹ</a>
-                            </div>
-                        
                     </li>
                     <li id="boloc-ram">RAM <i class='bx bxs-down-arrow'></i>
                         <div class="boloc-du-loai-ram">
                             <div class="muiten"></div>
-                            <a href="">2 GB</a>
-                            <a href="">3 GB</a>
-                            <a href="">4 GB</a>
-                            <a href="">6 GB</a>
-                            <a href="">8 GB</a>
-                            <a href="">12 GB</a>
+                            <a href="product.php?ram=2">2 GB</a>
+                            <a href="product.php?ram=3">3 GB</a>
+                            <a href="product.php?ram=4">4 GB</a>
+                            <a href="product.php?ram=6">6 GB</a>
+                            <a href="product.php?ram=8">8 GB</a>
+                            <a href="product.php?ram=12">12 GB</a>
                         </div>
                     </li>
                     <li id="boloc-dung-luong">Dung lượng <i class='bx bxs-down-arrow'></i>
                         <div class="boloc-du-loai-dung-luong">
                             <div class="muiten"></div>
-                            <a href="">32 GB</a>
-                            <a href="">64 GB</a>
-                            <a href="">128 GB</a>
-                            <a href="">256 GB</a>
-                            <a href="">512 GB</a>
-                            <a href="">1 TB</a>
-                        </div>
-                    </li>
-                    <li id="boloc-tc-sac">Tính năng sạc <i class='bx bxs-down-arrow'></i>
-                        <div class="boloc-du-loai-tc-sac">
-                            <div class="muiten"></div>
-                            <a href="">Sạc nhanh (từ 20W)</a>
-                            <a href="">Sạc siêu nhanh (từ 60W)</a>
-                            <a href="">Sạc không dây</a>
-                        </div>
-                    </li>
-                    <li id="boloc-tn-db">Tính năng đặc biệt <i class='bx bxs-down-arrow'></i>
-                        <div class="boloc-du-loai-tn-db">
-                            <div class="muiten"></div>
-                            <a href="">Kháng nước, bụi</a>
-                            <a href="">Hỗ trợ 5G</a>
-                            <a href="">Bảo mật khuôn mặt</a>
+                            <a href="product.php?rom=32">32 GB</a>
+                            <a href="product.php?rom=64">64 GB</a>
+                            <a href="product.php?rom=128">128 GB</a>
+                            <a href="product.php?rom=256">256 GB</a>
+                            <a href="product.php?rom=512">512 GB</a>
+                            <a href="product.php?rom=1">1 TB</a>
                         </div>
                     </li>
                 </div>
 
                 <div class="boloc-theo-hang">
-                    <a href="#"><img src="../image/logo-iphone-220x48.png" alt=""></a>
-                    <a href="#"><img src="../image/samsungnew-220x48-1.png" alt=""></a>
-                    <a href="#"><img src="../image/OPPO42-b_5.jpg" alt=""></a>
-                    <a href="#"><img src="../image/logo-xiaomi-220x48-5.png" alt=""></a>
-                    <a href="#"><img src="../image/vivo-logo-220-220x48-3.png" alt=""></a>
-                    <a href="#"><img src="../image/Realme42-b_37.png" alt=""></a>
-                    <a href="#"><img src="../image/Nokia42-b_21.jpg" alt=""></a>
-                    <a href="#"><img src="../image/Masstel42-b_0.png" alt=""></a>
-                    <a href="#"><img src="../image/Mobell42-b_19.jpg" alt=""></a>
-                    <a href="#"><img src="../image/Itel42-b_54.jpg" alt=""></a>
-                </div>
-                <h6>Chọn điện thoại theo nhu cầu</h6>
-                <div class="boloc-theo-nhu-cau">
-                    <li>Chơi game / Cấu hình cao</li>
-                    <li>Pin khủng trên 5000 mAh</li>
-                    <li>Chụp ảnh, quay phim</li>
-                    <li>Livestream</li>
-                    <li>Mỏng nhẹ</li>
+                <?php
+                        for($dthoai = 1;$dthoai<10;$dthoai++){
+                            $iphone = $pro->filtetrademark($dthoai);
+                            $thuonghieu = $pro -> gettrademark($dthoai);
+                            ?>
+                        <a href="product.php?idtrade=<?php echo $dthoai ?>"><img src="../image/<?php while($qqqq = $thuonghieu->fetch()){ echo $qqqq['avatar'];} ?>" alt=""></a>
+                        <?php } ?>
                 </div>
                 <div class="boloc-bottom">
                     <div class="boloc-bottom-left">
-                        <li><b>103 Điện thoại</b></li>
-                        <li><input type="checkbox" name="" id=""> <img src="../image/icon-thunder.png" alt="">GIAO NHANH</li>
-                        <li><input type="checkbox" name="" id=""> Giảm giá</li>
-                        <li><input type="checkbox"> Góp 0% - 1%</li>
-                        <li><input type="checkbox"> Đặc quyền tại Thế giới di động</li>
-                        <li><input type="checkbox"> Mới</li>
+                        <li><b><?php echo $sotongsp['tongsp'] ?> Điện thoại</b></li>
                     </div>
                     <div class="boloc-bottom-right">
-                        <select name="" id="">
-                            <option value="">Xếp theo: Nổi bật</option>
-                            <option value="">% Giảm</option>
-                            <option value="">Giá từ cao đến thấp</option>
-                            <option value="">Giá từ thấp đến cao</option>
+                        <form action="#" method="post">
+                        <select name="sapxepgia" id="sapxepgia" onchange="this.form.submit()">
+                            <option value="giangaunhien" <?php if(isset($_POST['sapxepgia']) && $_POST['sapxepgia']=='giangaunhien'){unset($_SESSION['chonsapxepgia']);echo 'selected';}elseif(isset($_SESSION['chonsapxepgia'])&&$_SESSION['chonsapxepgia']=='giangaunhien'){echo 'selected';}?>>Giá ngẫu nhiên</option>
+                            <option value="giacdt" <?php if(isset($_POST['sapxepgia']) && $_POST['sapxepgia']=='giacdt'){unset($_SESSION['chonsapxepgia']);echo 'selected';}elseif(isset($_SESSION['chonsapxepgia'])&&$_SESSION['chonsapxepgia']=='giacdt'){echo 'selected';}?>>Giá từ cao đến thấp</option>
+                            <option value="giatdc" <?php if(isset($_POST['sapxepgia']) && $_POST['sapxepgia']=='giatdc'){unset($_SESSION['chonsapxepgia']);echo 'selected';}elseif(isset($_SESSION['chonsapxepgia'])&&$_SESSION['chonsapxepgia']=='giatdc'){echo 'selected';}?>>Giá từ thấp đến cao</option>
                         </select>
+                        <?php 
+                        if(isset($_POST['sapxepgia'])){
+                            $sapxepgia = $_POST['sapxepgia'];
+                            unset($_SESSION['chonsapxepgia']);
+                            $_SESSION['chonsapxepgia'] = $sapxepgia;
+                        }elseif(isset($_SESSION['chonsapxepgia'])){
+                            $sapxepgia=$_SESSION['chonsapxepgia'];
+                        }
+                        else{
+                            $sapxepgia='giangaunhien';
+                        }
+                        ?>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -143,49 +144,48 @@
                     <div class="bocloc-form-content-theo-hang">
                         <p>Hãng</p>
                         <div class="bocloc-form-content-theo-hang-cac-hang">
-                            <a href=""><img src="../image/logo-iphone-220x48.png" alt=""></a>
-                            <a href=""><img src="../image/samsungnew-220x48-1.png" alt=""></a>
-                            <a href=""><img src="../image/OPPO42-b_5.jpg" alt=""></a>
-                            <a href=""><img src="../image/logo-xiaomi-220x48-5.png" alt=""></a>
-                            <a href=""><img src="../image/vivo-logo-220-220x48-3.png" alt=""></a>
-                            <a href=""><img src="../image/Realme42-b_37.png" alt=""></a>
-                            <a href=""><img src="../image/Nokia42-b_21.jpg" alt=""></a>
-                            <a href=""><img src="../image/Masstel42-b_0.png" alt=""></a>
-                            <a href=""><img src="../image/Mobell42-b_19.jpg" alt=""></a>
-                            <a href=""><img src="../image/Itel42-b_54.jpg" alt=""></a>
+                        <?php
+                        for($dthoai = 1;$dthoai<10;$dthoai++){
+                            $iphone = $pro->filtetrademark($dthoai);
+                            $thuonghieu = $pro -> gettrademark($dthoai);
+                            ?>
+                        <a href="product.php?idtrade=<?php echo $dthoai ?>"><img src="../image/<?php while($qqqq = $thuonghieu->fetch()){ echo $qqqq['avatar'];} ?>" alt=""></a>
+                        <?php } ?>
                         </div>
                     </div>
                     <div class="bocloc-form-content-loc-theo-loai">
                         <div class="bocloc-form-content-loc-theo-gia">
                             <p>Giá</p>
                             <div class="bocloc-form-content-loc-theo-gia-hien">
-                                <li>Dưới 2 triệu</li>
-                                <li>Từ 2 - 4 triệu</li>
-                                <li>Từ 4 - 7 triệu</li>
-                                <li>Từ 7 - 13 triệu</li>
-                                <li>Từ 13 - 20 triệu</li>
-                                <li>Trên 20 triệu</li>
+                                <a href="product.php?giabe=0&gialon=2000000">Dưới 2 triệu</a>
+                                <a href="product.php?giabe=2000000&gialon=4000000">Từ 2 - 4 triệu</a>
+                                <a href="product.php?giabe=4000000&gialon=7000000">Từ 4 - 7 triệu</a>
+                                <a href="product.php?giabe=7000000&gialon=13000000">Từ 7 - 13 triệu</a>
+                                <a href="product.php?giabe=13000000&gialon=20000000">Từ 13 - 20 triệu</a>
+                                <a href="product.php?giabe=20000000&gialon=28000000">Từ 20 - 28 triệu</a>
+                                <a href="product.php?giabe=28000000&gialon=50000000">Trên 28 triệu</a>
                             </div>
                         
                         </div>
                         <div class="bocloc-form-content-loc-theo-loai-dt">
                             <p>Loại điện thoại</p>
                             <div class="bocloc-form-content-loc-theo-loai-dt-img">
-                                <li><img src="../img_main/oppo-a77s-den-thumb-1-2-600x600.jpg" alt=""><br>Android</li>
-                                <li><img src="../img_main/iphone-14-pro-max-tim-thumb-600x600.jpg" alt=""><br>iPhone (iOS)</li>
-                                <li><img src="../img_main/nokia-110-4g-blue-600x600.jpg" alt=""><br>Điện thoại phổ thông</li>
-            
+                                <a href="product.php?loaidt=android"><div><img src="../img_main/oppo-a77s-den-thumb-1-2-600x600.jpg" alt=""></div><br>Android</a>
+                                <a href="product.php?loaidt=ios"><div><img src="../img_main/iphone-14-pro-max-tim-thumb-600x600.jpg" alt=""></div><br>iPhone (iOS)</a>
+                                <a href="product.php?loaidt=dtpt"><div><img src="../img_main/nokia-110-4g-blue-600x600.jpg" alt=""></div><br>Điện thoại phổ thông</a>
+                            
                             </div>
                             
                         </div>
-                        <div class="bocloc-form-content-loc-theo-nhu-cau">
-                            <p>Theo nhu cầu</p>
-                            <div class="bocloc-form-content-loc-theo-nhu-cau-container">
-                                <li>Chơi game / Cấu hình cao</li>
-                                <li>Pin khủng trên 5000 mAh</li>
-                                <li>Chụp ảnh, quay phim</li>
-                                <li>Livestream</li>
-                                <li>Mỏng nhẹ</li>
+                        <div class="bocloc-form-content-loc-theo-loai-dt">
+                            <p>Dung lượng lưu trữ</p>
+                            <div class="bocloc-form-content-loc-theo-loai-dt-img">
+                                <a href="product.php?rom=32">32 GB</a>
+                                <a href="product.php?rom=64">64 GB</a>
+                                <a href="product.php?rom=128">128 GB</a>
+                                <a href="product.php?rom=256">256 GB</a>
+                                <a href="product.php?rom=512">512 GB</a>
+                                <a href="product.php?rom=1">1 TB</a>
                             </div>
                             
                         </div>
@@ -195,46 +195,12 @@
                         <div class="bocloc-form-content-loc-theo-gia">
                             <p>RAM</p>
                             <div class="bocloc-form-content-loc-theo-gia-hien">
-                                <li>2 GB</li>
-                                <li>3 GB</li>
-                                <li>4 GB</li>
-                                <li>6 GB</li>
-                                <li>8 GB</li>
-                                <li>12 GB</li>
-                            </div>
-                        
-                        </div>
-                        <div class="bocloc-form-content-loc-theo-loai-dt">
-                            <p>Dung lượng lưu trữ</p>
-                            <div class="bocloc-form-content-loc-theo-loai-dt-img">
-                                <li>32 GB</li>
-                                <li>64 GB</li>
-                                <li>128 GB</li>
-                                <li>256 GB</li>
-                                <li>512 GB</li>
-                                <li>1 TB</li>
-                            </div>
-                            
-                        </div>
-                        <div class="bocloc-form-content-loc-theo-nhu-cau">
-                            <p>Tinh năng sạc</p>
-                            <div class="bocloc-form-content-loc-theo-nhu-cau-container">
-                                <li>Sạc nhanh (từ 20W)</li>
-                                <li>Sạc siêu nhanh (từ 60W)</li>
-                                <li>Sạc không dây</li>
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="bocloc-form-content-loc-theo-loai">
-                        <div class="bocloc-form-content-loc-theo-gia">
-                            <p>RAM</p>
-                            <div class="bocloc-form-content-loc-theo-gia-hien">
-                                <li>Kháng nước, bụi</li>
-                                <li>Hỗ trợ 5G</li>
-                                <li>Bảo mật khuôn mặt</li>
-                                
+                                <a href="product.php?ram=2">2 GB</a>
+                                <a href="product.php?ram=3">3 GB</a>
+                                <a href="product.php?ram=4">4 GB</a>
+                                <a href="product.php?ram=6">6 GB</a>
+                                <a href="product.php?ram=8">8 GB</a>
+                                <a href="product.php?ram=12">12 GB</a>
                             </div>
                         
                         </div>
@@ -247,13 +213,96 @@
     <section class="product">
         <div class="container">
             <div class="product-content">
+                <?php if(isset($_GET['edtsearch'])){
+
+                ?>
+                <div class="thong-bao-sp">Sản phẩm được tìm kiếm: <span><?php echo $_GET['edtsearch'] ?></span></div>
+                <?php
+
+                }
+                elseif(isset($_GET['idtrade'])){
+                    $tenth=$pro->gettrademark($_GET['idtrade']);
+                    $tenthuonghieu= $tenth->fetch();
+                    ?>
+                    <div class="thong-bao-sp">Sản phẩm thuộc hãng: <span><?php echo $tenthuonghieu['name'] ?></span></div>
+                    <?php
+                }elseif(isset($_GET['giabe'])&&isset($_GET['gialon'])){
+                ?>
+                <div class="thong-bao-sp">Sản phẩm được lọc theo giá từ: <span><?php echo number_format($_GET['giabe'],0,',','.') ?></span> đến <span><?php echo number_format($_GET['gialon'],0,',','.') ?></span></div>
+                <?php
+                }elseif(isset($_GET['ram'])){
+                ?>
+                <div class="thong-bao-sp">Sản phẩm được lọc theo ram: <span><?php echo $_GET['ram'].' GB' ?></span></div>
+                <?php   
+                }elseif(isset($_GET['loaidt'])){
+                    if($_GET['loaidt']=='android'){
+                        $tenloaidt='Android';
+                    }elseif($_GET['loaidt']=='ios'){
+                        $tenloaidt='iPhone (iOS)';
+                    }else $tenloaidt="Điện thoại phổ thông";
+                ?>
+                <div class="thong-bao-sp">Sản phẩm được lọc theo loại điện thoại: <span><?php echo $tenloaidt ?></span></div>
+                <?php
+                }
+                elseif(isset($_GET['rom'])){
+                    ?>
+                    <div class="thong-bao-sp">Sản phẩm được lọc theo dung lượng: <span><?php echo $_GET['rom'].' GB' ?></span></div>
+                    <?php   
+                    }
+                ?>
+                <script>
+                    let vitridl=[];
+                    let demdl=[];
+                    let chudl=[];
+                </script>
                 <div class="product-content-items">
                     <?php 
                     $pro = new Product();
-                    $result = $pro->getProduct();
+                    if(isset($_GET['edtsearch'])){
+                        $search = $_GET['edtsearch'];
+                        $result = $pro->search($search);
+                    }
+                    elseif(isset($_GET['idtrade'])){
+                        $idtrade = $_GET['idtrade'];
+                        $result = $pro->filtetrademark($idtrade);
+                    }
+                    elseif(isset($_GET['ram'])){
+                        $ram = $_GET['ram'];
+                        $result = $pro->loctheoram($ram);
+                    }
+                    elseif(isset($_GET['rom'])){
+                        $rom = $_GET['rom'];
+                        $result = $pro->loctheorom($rom);
+                    }
+                    elseif(isset($_GET['loaidt'])){
+                        $loaidt = $_GET['loaidt'];
+                        $result = $pro->loctheoloaidt($loaidt);
+                    }
+                    elseif(isset($_GET['giabe'])&&isset($_GET['gialon'])){
+                        $giabe = $_GET['giabe'];
+                        $gialon=$_GET['gialon'];
+                        $result = $pro->loctheogia($giabe,$gialon);
+                    }
+                    else{
+                        if(isset($_GET['pi'])){
+                            $result = $pro->getProduct($_GET['pi'],$sapxepgia);
+                            
+                        }
+                        else{
+                            $result = $pro->getProduct(0,$sapxepgia);
+                        }
+                    }
+                    $demo = 0;
+                    $vitri = array();
+                    $spgiab = array();
+                    $giagiamsp = array();
+                    $ptramgiamgia = array();
                     while($sp = $result -> fetch()){
+                        $demo = $demo+1;
                      ?>
-                    <div class="product-content-item">
+                     
+                    <div class="product-content-item" onclick="window.location.href='product_detail.php?id=<?php echo $sp['id']?>';">
+                    <form action="#" method="post">
                         <div class="product-content-item-uu-dai">
                             <a href="">Trả góp 0%</a>
                         </div>
@@ -262,37 +311,60 @@
                         </div>
                         <div class="product-content-item-title">
                             <li><img src="../image/icon-50x50-2.png" alt="">GIÁ RẺ QUÁ</li>
-                            <li><a href="product_detail.php"><?php echo $sp['tensp'] ?></a></li>
+                            <li><a href="#"><?php echo $sp['tensp'] ?></a></li>
                             <li>
-                                <a href="">6.7"</a>
-                                <a href="">Super Retina XDR</a>
+                                <a href="#"><?php echo $sp['mahinhtrong'] ?></a>
                             </li>
                             <li>
                                 <?php
+                                $vitri[$sp['id']]=1;
+                                $spgiab[$sp['id']]= $sp['gia1'];
                                 if($sp['dungluong1']!=""){
                                 ?>
-                                <a href="" class="active"><?php echo $sp['dungluong1'] ?></a>
+                                <input type="submit" name="dungluong1<?php echo $sp['id']?>" id="dungluong1<?php echo $sp['id']?>" class="active" value="<?php echo $sp['dungluong1'] ?>">
                                 <?php
+                                    if(isset($_POST['dungluong1'.$sp['id']])){
+                                        $vitri[$sp['id']]=1;
+                                        $spgiab[$sp['id']]= $sp['gia1'];
+                                    }
                                 }
                                 if($sp['dungluong2']!=""){
                                 ?>
-                                <a href=""><?php echo $sp['dungluong2'] ?></a>
+                                <input type="submit" name="dungluong2<?php echo $sp['id']?>" id="dungluong2<?php echo $sp['id']?>" value="<?php echo $sp['dungluong2'] ?>">
                                 <?php
+                                    if(isset($_POST['dungluong2'.$sp['id']])){
+                                        $vitri[$sp['id']]=2;
+                                        $spgiab[$sp['id']]= $sp['gia2'];
+                                    }
                                 }
                                 if($sp['dungluong3']!=""){
                                 ?>
-                                <a href=""><?php echo $sp['dungluong3'] ?></a>
+                                <input type="submit" name="dungluong3<?php echo $sp['id']?>" id="dungluong3<?php echo $sp['id']?>" value="<?php echo $sp['dungluong3'] ?>">
                                 <?php
+                                   if(isset($_POST['dungluong3'.$sp['id']])){
+                                    $vitri[$sp['id']]=3;
+                                    $spgiab[$sp['id']]= $sp['gia3'];
+                                }
                                 }
                                 if($sp['dungluong4']!=""){
                                 ?>
-                                <a href=""><?php echo $sp['dungluong4'] ?></a>
+                                <input type="submit" name="dungluong4<?php echo $sp['id']?>" id="dungluong4<?php echo $sp['id']?>" value="<?php echo $sp['dungluong4'] ?>">
                                 <?php
+                                if(isset($_POST['dungluong4'.$sp['id']])){
+                                    $vitri[$sp['id']]=4;
+                                    $spgiab[$sp['id']]= $sp['gia4'];
+                                }
                                 }
                                 ?>
                             </li>
-                            <li><p><?php echo $sp['gia1'] ?><sup>đ</sup></p><span>-2%</span></li>
-                            <li><?php echo $sp['gia1'] ?><sup>đ</sup></li>
+                            
+                            <?php 
+                            
+                            $giagiamsp[$sp['id']]=$spgiab[$sp['id']]+500000;
+                            $ptramgiamgia[$sp['id']] = 100-(($spgiab[$sp['id']]/$giagiamsp[$sp['id']])*100);
+                            ?>
+                            <li><p><?php echo number_format($giagiamsp[$sp['id']],0,',','.') ?><sup>đ</sup></p><span>-<?php echo floor($ptramgiamgia[$sp['id']]) ?>%</span></li>
+                            <li><?php echo number_format($spgiab[$sp['id']],0,',','.') ?><sup>đ</sup></li>
                             <li>
                                 <i class='bx bxs-star' ></i>
                                 <i class='bx bxs-star' ></i>
@@ -300,7 +372,21 @@
                                 <i class='bx bxs-star' ></i>
                                 <i class='bx bxs-star' ></i>
                             </li>
+                            <script>
+                                demdl[<?php echo $sp['id']?>] = document.querySelectorAll(".product-content-item:nth-child(<?php echo $demo ?>) .product-content-item-title li:nth-child(4) input");
+                                vitridl[<?php echo $sp['id']?>] = <?php echo $vitri[$sp['id']]?>;
+                                for(chudl[<?php echo $sp['id']?>] = 1;chudl[<?php echo $sp['id']?>]<=demdl[<?php echo $sp['id']?>].length;chudl[<?php echo $sp['id']?>]++){
+                                    if(chudl[<?php echo $sp['id']?>]==vitridl[<?php echo $sp['id']?>]){
+                                        document.querySelector(".product-content-item:nth-child(<?php echo $demo ?>) .product-content-item-title li:nth-child(4) input:nth-child("+chudl[<?php echo $sp['id']?>]+")").classList.add('active');
+                                    }
+                                    else{
+                                        document.querySelector(".product-content-item:nth-child(<?php echo $demo ?>) .product-content-item-title li:nth-child(4) input:nth-child("+chudl[<?php echo $sp['id']?>]+")").classList.remove('active');
+                                    }
+                                }
+                            </script>
                         </div>
+                        
+                    </form>
                     </div>
                     <?php } ?>
                     
@@ -308,11 +394,23 @@
             </div>
         </div>
     </section>
+    <?php
+        if(isset($_GET['pi'])){
+            $pi=$_GET['pi']+1;
+            
+        }else{
+            $pi=1;
+        } $sotongspxt=$sotongsp['tongsp']-20-10*($pi-1);
+        if($sotongspxt>0){
+    ?>
     <section class="xemthem">
         <div class="container">
             <div class="xemthem-content">
-                <a href="">Xem thêm 83 Điện thoại <i class='bx bxs-down-arrow' ></i></a>
+                
+                <a href="product.php?pi=<?php echo $pi ?>">Xem thêm <?php echo $sotongspxt ?> Điện thoại <i class='bx bxs-down-arrow' ></i></a>
             </div>
         </div>
     </section>
+    <?php } ?>  
+    <script src="../js/product.js"></script>
 <?php include("footer.php"); ?>

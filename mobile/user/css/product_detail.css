@@ -141,18 +141,19 @@
     flex-wrap: wrap;
     margin-bottom: 10px;
 }
-.product-detail-show-bottom-right-dung-luong li{
+.product-detail-show-bottom-right-dung-luong input{
     font-size: 14px;
     border: 1px solid #ddd;
     padding: 10px 15px;
     border-radius: 5px;
     margin-right: 5px;
     color: #333;
+    background: none;
     cursor: pointer;
     transition: all .3s ease;
 }
-.product-detail-show-bottom-right-dung-luong li.active,
-.product-detail-show-bottom-right-dung-luong li:hover{
+.product-detail-show-bottom-right-dung-luong input.active,
+.product-detail-show-bottom-right-dung-luong input:hover{
     border: 1px solid #288ad6;
     color: #288ad6;
 }
@@ -162,7 +163,7 @@
     flex-wrap: wrap;
     margin-bottom: 10px;
 }
-.product-detail-show-bottom-right-mau-dt li{
+.product-detail-show-bottom-right-mau-dt input{
     font-size: 14px;
     border: 1px solid #ddd;
     padding: 10px 15px;
@@ -170,10 +171,11 @@
     margin-right: 5px;
     color: #333;
     cursor: pointer;
+    background: none;
     transition: all .3s ease;
 }
-.product-detail-show-bottom-right-mau-dt li.active,
-.product-detail-show-bottom-right-mau-dt li:hover{
+.product-detail-show-bottom-right-mau-dt input.active,
+.product-detail-show-bottom-right-mau-dt input:hover{
     border: 1px solid #288ad6;
     color: #288ad6;
 }
@@ -340,11 +342,10 @@
 }
 .product-detail-show-bottom-left-top-menu li img{
     width: 80%;
-    
 }
-.product-detail-show-bottom-left-top-menu li:nth-child(1) img, 
-.product-detail-show-bottom-left-top-menu li:nth-child(6) img,
-.product-detail-show-bottom-left-top-menu li:nth-child(7) img{
+.product-detail-show-bottom-left-top-menu .btn-mau0 img, 
+.product-detail-show-bottom-left-top-menu .openkt img,
+.product-detail-show-bottom-left-top-menu .opentt img{
     width: 80%;
     padding: 15%;
 }
@@ -484,27 +485,19 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.product-detail-show-bottom-right-button-mua a{
-    width: 48%;
-}
-.product-detail-show-bottom-right-button-mua a button{
-    width: 100%;
-}
-.product-detail-show-bottom-right-button-mua button{
+.product-detail-show-bottom-right-button-mua input{
     border: 1px solid #ddd;
     width: 48%;
     height: 50px;
     border-radius: 10px;
     background-color: #ebb057;
-    display: flex;
+    text-align: center;
     color: #fff;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     text-align: center;
     transition: all .3s ease;
 }
-.product-detail-show-bottom-right-button-mua button:hover{
+.product-detail-show-bottom-right-button-mua input:hover{
     background-color: #288ad6;
 }
 /* Thông số kĩ thuật */
@@ -660,16 +653,17 @@
     font-size: 14px;
     
 }
-.product-detail-show-sp-khac-top-phan-loai li{
+.product-detail-show-sp-khac-top-phan-loai a{
     border: 1px solid #ddd;
     border-radius: 40px;
     padding: 10px;
+    font-size: 14px;
     margin-right: 10px;
     transition: all .3s ease;
     color: #333;
     cursor: pointer;
 }
-.product-detail-show-sp-khac-top-phan-loai li:hover{
+.product-detail-show-sp-khac-top-phan-loai a:hover{
     border: 1px solid #288ad6;
     color: #288ad6;
 }

@@ -2,6 +2,11 @@
     include("hearder.php");
     include("slidebar.php");
 ?>
+    <section class="baner-one">
+        <div class="container">
+            <img src="../image/ban3.png" alt="">
+        </div>
+    </section>
     <section class="slider-product-one">
         <div class="container">
             <div class="slider-product-one-content">
@@ -19,14 +24,17 @@
                                 $result = $pro->getProductSlider($i);
                                 while($sp = $result->fetch()){
                             ?>
-                            <div class="slider-product-one-content-item">
+                            <div class="slider-product-one-content-item" onclick="window.location.href='product_detail.php?id=<?php echo $sp['id']?>';">
                                 <img src="../img_main/<?php echo $sp['img_main'] ?>" alt="">
                                 <div class="slider-product-one-content-item-text">
-                                    <li><img src="../image/icon.png" alt=""><p>Trợ giá mùa dịch</p></li>
+                                    <li><img src="../image/icon.png" alt=""><p>Trợ giá mùa giáng sinh</p></li>
                                     <li><?php echo $sp['tensp'] ?></li>
                                     <li>Online giá rẻ</li>
-                                    <li><p><?php echo number_format($sp['gia1'],0,',','.')  ?><sup>đ</sup></p><span>-6%</span> </li>
-                                    <li><?php echo number_format($sp['gia1'],0,',','.')  ?><sup>đ</sup></li>
+                                    <?php $giaban=$sp['gia1'];
+                                    $giagiam=$giaban+500000;
+                                    $ptgiam=100-(($giaban/$giagiam)*100) ?>
+                                    <li><p><?php echo number_format($giagiam,0,',','.')  ?><sup>đ</sup></p><span>-<?php echo floor($ptgiam) ?>%</span> </li>
+                                    <li><?php echo number_format($giaban,0,',','.')  ?><sup>đ</sup></li>
                                     <li>Quà 400.000<sup>đ</sup></li>
                                     <li>
                                         <i class='bx bxs-star' ></i>
@@ -66,16 +74,19 @@
                 </div>
                 <div class="product-gallery-one-content-product">
                     <?php 
-                    $spnb = $pro->getProductSlider(0);
+                    $spnb = $pro->getProductSlider(3);
                     while($spmoibat = $spnb->fetch()){ ?>
-                    <div class="product-gallery-one-content-product-items">
+                    <div class="product-gallery-one-content-product-items" onclick="window.location.href='product_detail.php?id=<?php echo $spmoibat['id']?>';">
                         <img src="../img_main/<?php echo $spmoibat['img_main'] ?>" alt="">
                         <div class="product-gallery-one-content-product-item-text">
-                            <li><img src="../image/icon.png" alt=""><p>Trợ giá mùa dịch</p></li>
+                            <li><img src="../image/icon.png" alt=""><p>Trợ giá mùa giáng sinh</p></li>
                             <li><?php echo $spmoibat['tensp'] ?></li>
                             <li>Online giá rẻ</li>
-                            <li><p><?php echo number_format($spmoibat['gia1'],0,',','.') ?><sup>đ</sup></p><span>-6%</span></li>
-                            <li><?php echo number_format($spmoibat['gia1'],0,',','.') ?><sup>đ</sup></li>
+                            <?php $giaban=$spmoibat['gia1'];
+                            $giagiam=$giaban+500000;
+                            $ptgiam=100-(($giaban/$giagiam)*100) ?>
+                            <li><p><?php echo number_format($giagiam,0,',','.')  ?><sup>đ</sup></p><span>-<?php echo floor($ptgiam) ?>%</span> </li>
+                            <li><?php echo number_format($giaban,0,',','.')  ?><sup>đ</sup></li>
                             <li>
                                 <i class='bx bxs-star' ></i>
                                 <i class='bx bxs-star' ></i>
@@ -110,7 +121,7 @@
                         $spthk = $pro->getProductThietKe(2);
                         while($sptke = $spthk->fetch()){
                         ?>
-                        <div class="product-gallery-two-content-left-bottom-item">
+                        <div class="product-gallery-two-content-left-bottom-item" onclick="window.location.href='product_detail.php?id=<?php echo $sptke['id']?>';">
                             <img src="../img_main/<?php echo $sptke['img_main'] ?>" alt="">
                             <div class="product-gallery-two-content-left-bottom-item-text">
                                 <li>Ưu đãi khủng</li>
@@ -230,34 +241,16 @@
             <div class="tim-kiem-nhieu-content">
                 <h2>TÌM KIẾM NHIỀU</h2>
                 <div class="tim-kiem-nhieu-content-item">
-                    <li>iphone 15</li>
-                    <li>iphone 15 128gb</li>
-                    <li>inphone 15 plus</li>
-                    <li>iphone 15 pro max</li>
-                    <li>bàn phím máy tính</li>
-                    <li>loa jbl</li>
-                    <li>airtag</li>
-                    <li>lg gram</li>
-                    <li>đồng hồ lacoste</li>
-                    <li>laptop đồ họa</li>
-                    <li>phụ kiện samsung</li>
-                    <li>đồng hồ quartz</li>
-                    <li>đồng hồ thông minh chống nước</li>
-                    <li>macbook</li>
-                    <li>rog</li>
-                    <li>orient star</li>
-                    <li>samsung tabs</li>
-                    <li>máy in brother</li>
-                    <li>khóa cửa điện tử</li>
-                    <li>đồng hồ mặt vuông</li>
-                    <li>màn hình asus</li>
-                    <li>mac air</li>
-                    <li>Oppo Find N3</li>
-                    <li>Oppo find N3 Flip</li>
+                    <a href="product.php?edtsearch=iphone 15">iphone 15</a>
+                    <a href="product.php?edtsearch=iphone 15 128gb">iphone 15 128gb</li>
+                    <a href="product.php?edtsearch=iphone 15 plus">iphone 15 plus</li>
+                    <a href="product.php?edtsearch=iphone 15 pro max">iphone 15 pro max</li>
+                    <a href="product.php?edtsearch=oppo find n3">Oppo Find N3</li>
+                    <a href="product.php?edtsearch=oppo find n3 flip">Oppo find N3 Flip</li>
                 </div>
             </div>
         </div>
     </section>
-
+    <script src="../js/index.js"></script>
    <!-- Footer -->
 <?php include("footer.php") ?>

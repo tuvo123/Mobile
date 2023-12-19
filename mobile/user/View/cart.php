@@ -131,4 +131,5 @@
             </div>
         </div>
     </section>
+    <script src="../js/cart.js"></script>
 <?php include('footer.php');?>

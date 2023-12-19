@@ -31,8 +31,5 @@
             </div>
         </div>
     </section>
-    <section class="baner-one">
-        <div class="container">
-            <img src="../image/ban3.png" alt="">
-        </div>
-    </section>
+    
+    <script src="../js/slider.js"></script>  

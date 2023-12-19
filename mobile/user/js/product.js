@@ -49,19 +49,6 @@ filterdt.addEventListener("click",function(){
     }
     hiendt = !hiendt;
 })
-const filternhucau = document.querySelector("#boloc-nhu-cau");
-let hiennhucau = false;
-filternhucau.addEventListener("click",function(){
-    if(!hiennhucau){
-        filternhucau.classList.add("active");
-        document.querySelector(".boloc-du-loai-nhu-cau").style.display = "flex";
-    }
-    else{
-        filternhucau.classList.remove("active");
-        document.querySelector(".boloc-du-loai-nhu-cau").style.display = "none";
-    }
-    hiennhucau = !hiennhucau;
-})
 const filterram = document.querySelector("#boloc-ram");
 let hienram = false;
 filterram.addEventListener("click",function(){
@@ -87,32 +74,6 @@ filterdungluong.addEventListener("click",function(){
         document.querySelector(".boloc-du-loai-dung-luong").style.display = "none";
     }
     hiendungluong = !hiendungluong;
-})
-const filtertcsac = document.querySelector("#boloc-tc-sac");
-let hientcsac = false;
-filtertcsac.addEventListener("click",function(){
-    if(!hientcsac){
-        filtertcsac.classList.add("active");
-        document.querySelector(".boloc-du-loai-tc-sac").style.display = "flex";
-    }
-    else{
-        filtertcsac.classList.remove("active");
-        document.querySelector(".boloc-du-loai-tc-sac").style.display = "none";
-    }
-    hientcsac = !hientcsac;
-})
-const filtertndb = document.querySelector("#boloc-tn-db");
-let hientndb = false;
-filtertndb.addEventListener("click",function(){
-    if(!hientndb){
-        filtertndb.classList.add("active");
-        document.querySelector(".boloc-du-loai-tn-db").style.display = "flex";
-    }
-    else{
-        filtertndb.classList.remove("active");
-        document.querySelector(".boloc-du-loai-tn-db").style.display = "none";
-    }
-    hientndb = !hientndb;
 })
 
 const form = document.querySelector(".boloc-du-loai-hang");

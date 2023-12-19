@@ -49,23 +49,23 @@
                         <a href="#"><i class='bx bxl-tiktok'></i>324k Follow</a>
                     </div>
                     <div class="footer-top-right-cong-nhan">
-                        <a href=""><img src="frontend/image/abctuong.png" alt=""></a>
-                        <a href=""><img src="frontend/image/alogo2.png" alt=""></a>
-                        <a href=""><img src="frontend/image/alogo3.png" alt=""></a>
-                        <a href=""><img src="frontend/image/alogo4.png" alt=""></a>
+                        <a href=""><img src="../image/abctuong.png" alt=""></a>
+                        <a href=""><img src="../image/alogo2.png" alt=""></a>
+                        <a href=""><img src="../image/alogo3.png" alt=""></a>
+                        <a href=""><img src="../image/alogo4.png" alt=""></a>
                     </div>
                     <div class="footer-top-right-content">
                         <li>Website cùng tập đoàn</li>
                     </div>
                     <div class="footer-top-right-tap-doan">
-                        <a href=""><img src="frontend/image/anhttgi.png" alt=""></a>
-                        <a href=""><img src="frontend/image/anhdmx.png" alt=""></a>
-                        <a href=""><img src="frontend/image/anhbhx.png" alt=""></a>
-                        <a href=""><img src="frontend/image/anhntak.png" alt=""></a>
-                        <a href=""><img src="frontend/image/anhavakid.png" alt=""></a>
-                        <a href=""><img src="frontend/image/anhtantam.png" alt=""></a>
-                        <a href=""><img src="frontend/image/anh4k.png" alt=""></a>
-                        <a href=""><img src="frontend/image/anhvieclam.png" alt=""></a>
+                        <a href=""><img src="../image/anhttgi.png" alt=""></a>
+                        <a href=""><img src="../image/anhdmx.png" alt=""></a>
+                        <a href=""><img src="../image/anhbhx.png" alt=""></a>
+                        <a href=""><img src="../image/anhntak.png" alt=""></a>
+                        <a href=""><img src="../image/anhavakid.png" alt=""></a>
+                        <a href=""><img src="../image/anhtantam.png" alt=""></a>
+                        <a href=""><img src="../image/anh4k.png" alt=""></a>
+                        <a href=""><img src="../image/anhvieclam.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -79,11 +79,7 @@
             </div>
         </div>
     </section>
-    <script src="../js/index.js"></script>
+
     <script src="../js/script.js"></script>
-    <script src="../js/slider.js"></script>
-    <script src="../js/cart.js"></script>
-    <script src="../js/pd_detail.js"></script>
-    <script src="../js/product.js"></script>
 </body>
 </html>

@@ -383,6 +383,13 @@
 .product-content{
     margin-top: 10px;
 }
+.product-content .thong-bao-sp{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.product-content .thong-bao-sp span{
+    color: #eb5757;
+}
 .product-content-items{
     display: flex;
     flex-wrap: wrap;
@@ -457,16 +464,25 @@
     padding: 5px; 
     margin-right: 5px;
 }
+.product-content-item-title li:nth-child(4) input.active{
+    border: 1px solid #3f6fff;
+}
+.product-content-item-title li:nth-child(4) input:hover{
+    background-color: #3f6fff;
+    color: #fff;
+}
 .product-content-item-title li:nth-child(4){
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
 }
-.product-content-item-title li:nth-child(4) a{
+.product-content-item-title li:nth-child(4) input{
     border: 1px solid #ddd;
     font-size: 12px;
     color: #333;
+    background: none;
     border-radius: 4px;
+    cursor: pointer;
     padding: 5px 7px; 
     margin-right: 5px;
 }
@@ -606,7 +622,7 @@
     display: flex;
     flex-wrap: wrap;
 }
-.bocloc-form-content-loc-theo-gia-hien li{
+.bocloc-form-content-loc-theo-gia-hien a{
     border: 1px solid #ddd;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -616,7 +632,7 @@
     transition: all .3s ease;
     cursor: pointer;
 }
-.bocloc-form-content-loc-theo-gia-hien li:hover{
+.bocloc-form-content-loc-theo-gia-hien a:hover{
     border: 1px solid #3f6fff;
     color: #3f6fff;
 }
@@ -635,7 +651,7 @@
     display: flex;
     flex-wrap: wrap;
 }
-.bocloc-form-content-loc-theo-loai-dt-img li{
+.bocloc-form-content-loc-theo-loai-dt-img a{
  margin-right: 10px;
  border: 1px solid #ddd;
  border-radius: 5px;padding: 10px;
@@ -643,14 +659,14 @@
  transition: all .3s ease;
  cursor: pointer;
 }
-.bocloc-form-content-loc-theo-loai-dt-img li{
+.bocloc-form-content-loc-theo-loai-dt-img a{
     font-size: 13px;
     color: #333;
 }
-.bocloc-form-content-loc-theo-loai-dt-img li img{
+.bocloc-form-content-loc-theo-loai-dt-img a img{
     width: 40px;
 }
-.bocloc-form-content-loc-theo-loai-dt-img li:hover{
+.bocloc-form-content-loc-theo-loai-dt-img a:hover{
     border: 1px solid #3f6fff;
 }
 .bocloc-form-content-loc-theo-nhu-cau{

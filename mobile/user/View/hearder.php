@@ -1,6 +1,8 @@
 <?php
     include("../Model/connect.php");
   include("../Model/product.php");
+    include("../Model/pd_detail.php");
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +10,8 @@
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thế giới di động</title>
+    <title>VATH</title>
+    <link rel="icon" type="image/x-icon" href="../image/logoVathhead.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/product_detail.css">
     <link rel="stylesheet" href="../css/product.css">
@@ -277,27 +280,37 @@
     </nav>
     <section class="menu-bar">
         <div class="container">
+
             <div class="menu-bar-content">
                 <ul>
-                    <li><a href="/user/product"><i class='bx bx-mobile'></i>Điện thoại</a></li>
+                    <li><a href="product.php"><i class='bx bx-mobile'></i>Điện thoại</a></li>
+                    
+                        <?php 
+                        $pro = new Product();
+                        for($dthoai = 1;$dthoai<10;$dthoai++){
+                        $iphone = $pro->filtetrademark($dthoai);
+                        $thuonghieu = $pro -> gettrademark($dthoai);
+                        ?>
                     <li>
-                        <a href=""><img src="../image/logo-iphone-220x48.png" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
+                        <a href="product.php?idtrade=<?php echo $dthoai ?>"><img src="../image/<?php while($qqqq = $thuonghieu->fetch()){ echo $qqqq['avatar'];} ?>" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
                         <div class="submenu">
                                 <ul>
-                                    <li><a href="#">Iphone 15 Pro Max</a></li>
-                                    <li><a href="#">Iphone 15 Pro</a></li>
-                                    <li><a href="#">Iphone 15 Plus</a></li>
-                                    <li><a href="#">Iphone 15 </a></li>
-                                    <li><a href="#">Iphone 14 Pro Max</a></li>
-                                    <li><a href="#">Iphone 14 Pro</a></li>
-                                    <li><a href="#">Iphone 12 Pro Max</a></li>
-                                    <li><a href="#">Iphone 12 Plus</a></li>
-                                    <li><a href="#">Iphone 11 Pro Max</a></li>
-                                    <li><a href="#">Iphone 11</a></li>
+                                    <?php
+                                    if($dthoai>=6){
+                                    ?>
+                                    <li><a href="#">Sản phẩm hiện đã hết hàng</a></li>
+                                    <?php
+                                    }else{
+                                        while($spiphone = $iphone->fetch()){ ?>
+                                            <li><a href="product_detail.php?id=<?php echo $spiphone['id'] ?>"><?php echo $spiphone['tensp'] ?></a></li>
+                                    <?php }
+                                    }
+                                     ?>
                                 </ul>
                             </div>
                     </li>
-                    <li>
+                    <?php } ?>
+                    <!-- <li>
                         <a href=""><img src="../image/samsungnew-220x48-1.png" style="width: 100px; height:20px; border: 1px solid #ddd; border-radius: 40px; background-color:#fff"></img></a>
                         <div class="submenu">
                             <ul>
@@ -389,7 +402,7 @@
                                 <li><a href="#">Phụ kiện D</a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
